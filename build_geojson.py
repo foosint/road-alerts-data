@@ -8,8 +8,10 @@ Each run:
      every other route is reused unchanged from cache/routes.json
   4. writes data/roads.geojson (status, updatedAt, colour per segment and
      the feed's source.updatedAt) and data/cities.geojson - but only if a segment was
-     added/removed or its status, updatedAt or route changed
-  5. if PUBLISH=1: commits data/ in this repo and pushes it (only when something
+     added/removed, its status, updatedAt or route changed, or source.updatedAt changed
+  5. merges each road's latestActivations (a rolling window in the feed) into
+     data/alerts.json, a permanent log that only grows
+  6. if PUBLISH=1: commits data/ in this repo and pushes it (only when something
      changed); the road-alerts site reads the files from this repo
 
 Settings come from environment variables or a .env file next to this script
@@ -42,6 +44,7 @@ ROUTE_CACHE = HERE / "cache" / "routes.json"
 DATA_DIR = HERE / "data"  # published: committed and pushed on every change
 OUT_ROADS = DATA_DIR / "roads.geojson"
 OUT_CITIES = DATA_DIR / "cities.geojson"
+OUT_ALERTS = DATA_DIR / "alerts.json"  # permanent log of alert activations
 
 OSRM = "https://router.project-osrm.org/route/v1/driving/{coords}?overview=full&geometries=geojson"
 NOMINATIM = "https://nominatim.openstreetmap.org/search"
@@ -248,6 +251,52 @@ def describe_changes(old, new):
     return changes
 
 
+# ---------------------------------------------------------------- alert log
+
+def merge_alerts(roads, log):
+    """Merge the feed's latestActivations into the alert log; return (log, new event count).
+
+    The feed only keeps the last few activations per road, so the log is the only
+    lasting record. One activation can cover several roads; it is stored once, with
+    all its road ids. Events are never removed, and road names are kept for roads
+    that later disappear from the feed.
+    """
+    events = {e["id"]: dict(e, roads=list(e["roads"])) for e in log.get("events", [])}
+    names = dict(log.get("roads", {}))
+    new = 0
+    for r in roads:
+        names[r["id"]] = {"from": r["from"], "to": r["to"]}
+        for a in r.get("latestActivations") or []:
+            if not a.get("id") or not a.get("activatedAt"):
+                continue
+            e = events.get(a["id"])
+            if e is None:
+                e = events[a["id"]] = {"id": a["id"], "intent": a.get("intent"),
+                                       "at": a["activatedAt"], "roads": []}
+                new += 1
+            if r["id"] not in e["roads"]:
+                e["roads"] = sorted([*e["roads"], r["id"]])
+    merged = {
+        "roads": dict(sorted(names.items())),
+        "events": sorted(events.values(), key=lambda e: (e["at"], e["id"])),
+    }
+    return merged, new
+
+
+def save_alerts(path, log):
+    """Write the log with one event per line: small git diffs, still valid JSON."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    dump = lambda v: json.dumps(v, ensure_ascii=False, separators=(",", ":"))
+    lines = ['{"roads":{',
+             ",\n".join(f"{dump(k)}:{dump(v)}" for k, v in log["roads"].items()),
+             '},"events":[',
+             ",\n".join(dump(e) for e in log["events"]),
+             "]}\n"]
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text("\n".join(lines), encoding="utf-8")
+    tmp.replace(path)
+
+
 # ---------------------------------------------------------------- publish
 
 def git(repo, *args):
@@ -379,6 +428,13 @@ def main():
         print(f"changed: {', '.join(changes)} -> GeoJSON written")
     else:
         print("no changes - GeoJSON left untouched")
+
+    old_alerts = load_json(OUT_ALERTS, {})
+    alerts, new_alerts = merge_alerts(roads, old_alerts)
+    if alerts != old_alerts:
+        save_alerts(OUT_ALERTS, alerts)
+        changes.append(f"{new_alerts} new alerts" if new_alerts else "alert log")
+        print(f"alert log: {new_alerts} new, {len(alerts['events'])} total -> alerts.json written")
     print(f"done: {len(features)} segments ({changed} routed), source updatedAt "
           f"{feed.get('source', {}).get('updatedAt')}, statuses {statuses}")
 

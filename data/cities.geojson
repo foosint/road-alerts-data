@@ -261,13 +261,13 @@
    "properties": {
     "id": "Lugansk",
     "name": "Луганск",
-    "overridden": false
+    "overridden": true
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     39.297315,
-     48.571708
+     39.29234,
+     48.567339
     ]
    }
   },

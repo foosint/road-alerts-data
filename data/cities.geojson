@@ -291,13 +291,13 @@
    "properties": {
     "id": "Melitopol",
     "name": "Мелитополь",
-    "overridden": false
+    "overridden": true
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     35.382728,
-     46.846727
+     35.375001,
+     46.846673
     ]
    }
   },
@@ -396,13 +396,13 @@
    "properties": {
     "id": "Prishib",
     "name": "Пришиб",
-    "overridden": false
+    "overridden": true
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     35.323273,
-     47.258597
+     35.324528,
+     47.250183
     ]
    }
   },

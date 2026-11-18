@@ -141,7 +141,10 @@
 {"id":"HMLm9XTQD1-V53RHxM-H4W5UHAvsECR4","intent":"threat","at":"2026-11-18T17:55:39.863482Z","roads":["Debalcevo-Mius"]},
 {"id":"ryA0n8Xyl_8Ey7MhspEOtHOcbr0J06IA","intent":"threat","at":"2026-11-18T18:13:27.247410Z","roads":["Shahtersk-Torez"]},
 {"id":"YmZ6nE131AhlpSIPZpMLaSrH_oaTsmb0","intent":"threat","at":"2026-11-18T18:17:17.407133Z","roads":["Doneck-Harcisk"]},
-{"id":"D2JsSDjG1DkAEt5_bk90j4Xx5vk4rJDU","intent":"threat","at":"2026-11-18T18:17:21.737873Z","roads":["Harcisk-Shahtersk"]}
+{"id":"D2JsSDjG1DkAEt5_bk90j4Xx5vk4rJDU","intent":"threat","at":"2026-11-18T18:17:21.737873Z","roads":["Harcisk-Shahtersk"]},
+{"id":"z4wCYrAjGzQUc-a5xr6oFY4-0bofDJ55","intent":"clear","at":"2026-11-18T19:23:14.042145Z","roads":["Doneck-Harcisk"]},
+{"id":"PuFQmxwK-FG6bhN5uV0iOCtQn9bG2DWB","intent":"clear","at":"2026-11-18T19:23:17.321598Z","roads":["Harcisk-Shahtersk"]},
+{"id":"hAeFgLl8ZP3VnDIU9tiCA3rwnRbv-jM0","intent":"clear","at":"2026-11-18T19:24:29.179469Z","roads":["Shahtersk-Torez"]}
 ],"changes":[
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
@@ -151,5 +154,9 @@
 {"road":"Debalcevo-Mius","status":"busy","from":"neutral","at":"2026-11-18T17:55:40.150Z"},
 {"road":"Shahtersk-Torez","status":"busy","from":"neutral","at":"2026-11-18T18:13:27.685Z"},
 {"road":"Doneck-Harcisk","status":"busy","from":"neutral","at":"2026-11-18T18:17:17.890Z"},
-{"road":"Harcisk-Shahtersk","status":"busy","from":"neutral","at":"2026-11-18T18:17:21.809Z"}
+{"road":"Harcisk-Shahtersk","status":"busy","from":"neutral","at":"2026-11-18T18:17:21.809Z"},
+{"road":"Doneck-Harcisk","status":"clear","from":"busy","at":"2026-11-18T19:23:14.807Z"},
+{"road":"Harcisk-Shahtersk","status":"clear","from":"busy","at":"2026-11-18T19:23:17.841Z"},
+{"road":"Debalcevo-Lugansk","status":"neutral","from":"busy","at":"2026-11-18T19:23:50.783Z"},
+{"road":"Shahtersk-Torez","status":"clear","from":"busy","at":"2026-11-18T19:24:29.935Z"}
 ]}

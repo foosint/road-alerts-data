@@ -9,8 +9,8 @@ Each run:
   4. writes data/roads.geojson (status, updatedAt, colour per segment and
      the feed's source.updatedAt) and data/cities.geojson - but only if a segment was
      added/removed, its status, updatedAt or route changed, or source.updatedAt changed
-  5. merges each road's latestActivations (a rolling window in the feed) into
-     data/alerts.json, a permanent log that only grows
+  5. merges each road's latestActivations (a rolling window in the feed) and every
+     status change into data/alerts.json, a permanent log that only grows
   6. if PUBLISH=1: commits data/ in this repo and pushes it (only when something
      changed); the road-alerts site reads the files from this repo
 
@@ -253,17 +253,32 @@ def describe_changes(old, new):
 
 # ---------------------------------------------------------------- alert log
 
-def merge_alerts(roads, log):
-    """Merge the feed's latestActivations into the alert log; return (log, new event count).
+def merge_alerts(roads, log, old_status):
+    """Merge the feed into the alert log; return (log, new activation count, new status changes).
 
-    The feed only keeps the last few activations per road, so the log is the only
-    lasting record. One activation can cover several roads; it is stored once, with
-    all its road ids. Events are never removed, and road names are kept for roads
-    that later disappear from the feed.
+    events: the feed's latestActivations (threat / clear). The feed only keeps the last
+        few per road, so the log is the only lasting record. One activation can cover
+        several roads; it is stored once, with all its road ids.
+    changes: every status change of a road (e.g. busy -> neutral) seen between two runs,
+        timed by the road's updatedAt. Most threats end without a "clear" activation;
+        the road simply turns neutral again, so this is how the end of a threat is known.
+    statusSince: from when on status changes are recorded.
+
+    Nothing is ever removed. Road names are kept for roads that leave the feed.
     """
     events = {e["id"]: dict(e, roads=list(e["roads"])) for e in log.get("events", [])}
     names = dict(log.get("roads", {}))
-    new = 0
+    status_changes = list(log.get("changes", []))
+    if "statusSince" in log:
+        since = log["statusSince"]
+    else:  # first run with status tracking: recover past changes from the data commits
+        since, recovered = status_history()
+        status_changes += recovered
+        if recovered:
+            print(f"alert log: recovered {len(recovered)} status changes from git history since {since}")
+    known = {(c["road"], c["at"], c["status"]) for c in status_changes}
+
+    new = new_changes = 0
     for r in roads:
         names[r["id"]] = {"from": r["from"], "to": r["to"]}
         for a in r.get("latestActivations") or []:
@@ -276,21 +291,57 @@ def merge_alerts(roads, log):
                 new += 1
             if r["id"] not in e["roads"]:
                 e["roads"] = sorted([*e["roads"], r["id"]])
+        prev = old_status.get(r["id"])
+        if prev is not None and prev != r.get("status"):
+            c = {"road": r["id"], "status": r.get("status"), "from": prev, "at": r.get("updatedAt") or now_iso()}
+            if (c["road"], c["at"], c["status"]) not in known:
+                status_changes.append(c)
+                known.add((c["road"], c["at"], c["status"]))
+                new_changes += 1
     merged = {
+        "statusSince": since,
         "roads": dict(sorted(names.items())),
         "events": sorted(events.values(), key=lambda e: (e["at"], e["id"])),
+        "changes": sorted(status_changes, key=lambda c: (c["at"], c["road"])),
     }
-    return merged, new
+    return merged, new, new_changes
+
+
+def status_history():
+    """Status changes found in the git history of data/roads.geojson; returns (since, changes)."""
+    rel = OUT_ROADS.relative_to(HERE).as_posix()
+    try:
+        commits = git(HERE, "log", "--reverse", "--format=%H %cI", "--", rel).splitlines()
+    except RuntimeError:
+        commits = []
+    since, prev, found = None, None, []
+    for line in commits:
+        sha, when = line.split()
+        try:
+            data = json.loads(git(HERE, "show", f"{sha}:{rel}"))
+        except (RuntimeError, ValueError):
+            continue
+        cur = {f["properties"]["id"]: f["properties"] for f in data.get("features", [])}
+        if since is None:
+            since = datetime.fromisoformat(when).astimezone(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
+        for rid, props in cur.items():
+            if prev and rid in prev and prev[rid].get("status") != props.get("status"):
+                found.append({"road": rid, "status": props.get("status"), "from": prev[rid].get("status"),
+                              "at": props.get("updatedAt") or since})
+        prev = cur
+    return since or now_iso(), found
 
 
 def save_alerts(path, log):
-    """Write the log with one event per line: small git diffs, still valid JSON."""
+    """Write the log with one entry per line: small git diffs, still valid JSON."""
     path.parent.mkdir(parents=True, exist_ok=True)
     dump = lambda v: json.dumps(v, ensure_ascii=False, separators=(",", ":"))
-    lines = ['{"roads":{',
+    lines = ['{"statusSince":' + dump(log["statusSince"]) + ',"roads":{',
              ",\n".join(f"{dump(k)}:{dump(v)}" for k, v in log["roads"].items()),
              '},"events":[',
              ",\n".join(dump(e) for e in log["events"]),
+             '],"changes":[',
+             ",\n".join(dump(c) for c in log["changes"]),
              "]}\n"]
     tmp = path.with_suffix(path.suffix + ".tmp")
     tmp.write_text("\n".join(lines), encoding="utf-8")
@@ -300,7 +351,8 @@ def save_alerts(path, log):
 # ---------------------------------------------------------------- publish
 
 def git(repo, *args):
-    r = subprocess.run(["git", "-C", str(repo), *args], capture_output=True, text=True)
+    r = subprocess.run(["git", "-C", str(repo), *args], capture_output=True, text=True,
+                       encoding="utf-8", errors="replace")
     if r.returncode:
         raise RuntimeError(f"git {' '.join(args)} failed: {(r.stderr or r.stdout).strip()}")
     return r.stdout.strip()
@@ -430,11 +482,16 @@ def main():
         print("no changes - GeoJSON left untouched")
 
     old_alerts = load_json(OUT_ALERTS, {})
-    alerts, new_alerts = merge_alerts(roads, old_alerts)
+    old_status = {f["properties"]["id"]: f["properties"].get("status")
+                  for f in (old_roads or {}).get("features", [])}
+    alerts, new_alerts, new_changes = merge_alerts(roads, old_alerts, old_status)
     if alerts != old_alerts:
         save_alerts(OUT_ALERTS, alerts)
-        changes.append(f"{new_alerts} new alerts" if new_alerts else "alert log")
-        print(f"alert log: {new_alerts} new, {len(alerts['events'])} total -> alerts.json written")
+        what = [f"{new_alerts} new alerts" if new_alerts else "",
+                f"{new_changes} status changes logged" if new_changes else ""]
+        changes.append(", ".join(filter(None, what)) or "alert log")
+        print(f"alert log: {new_alerts} new activations, {new_changes} new status changes, "
+              f"{len(alerts['events'])}/{len(alerts['changes'])} total -> alerts.json written")
     print(f"done: {len(features)} segments ({changed} routed), source updatedAt "
           f"{feed.get('source', {}).get('updatedAt')}, statuses {statuses}")
 

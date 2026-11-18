@@ -7,7 +7,7 @@ The feed lists road segments as from/to pairs of towns in Crimea, Kherson, Zapor
 - routes the segment along real roads;
 - writes the result as GeoJSON, with the segment's alert `status`, its `updatedAt` time and a colour.
 
-It also keeps a permanent log of every alert activation in `data/alerts.json`. The site builds its alert log, the per-road history and the alerts-by-hour charts from it.
+It also keeps a permanent log of every alert activation and every status change in `data/alerts.json`. The site builds its alert log, the per-road history and the alerts-by-hour charts from it.
 
 It is meant to run as a cron job on a Raspberry Pi. When something has changed, it commits `data/` and pushes this repo.
 
@@ -165,12 +165,15 @@ Each run goes through six steps:
    - the feed's `source.updatedAt` changed, even if no segment changed. This keeps the "Feed updated" time on the map current.
 
    Without a change, the files are left untouched.
-5. **Update the alert log.** Each road in the feed carries `latestActivations`, its last few activations (`threat` or `clear`). The feed only keeps a short window, roughly the last few days. The script merges these into `data/alerts.json`:
-   - An activation not yet in the log is added.
-   - An activation is stored once, even if it covers several roads. Its `roads` list collects them all.
-   - Nothing is ever removed, so the log keeps activations that have left the feed's window.
+5. **Update the alert log** in `data/alerts.json`. It gets two kinds of entries, and nothing is ever removed from it.
+   - **Activations.** Each road in the feed carries `latestActivations`, its last few activations (`threat` or `clear`). The feed only keeps a short window, roughly the last few days.
+     - An activation not yet in the log is added.
+     - An activation is stored once, even if it covers several roads. Its `roads` list collects them all.
+     - Activations that have left the feed's window stay in the log.
+   - **Status changes.** When a road's status differs from the one in the previous `data/roads.geojson`, the change is logged with the road's `updatedAt` as its time. Most threats end without a `clear` activation: the road simply turns `neutral` again. These changes are the only record of when such a threat ended.
+     - On the first run of this version, `statusSince` is missing from the log. The script then recovers the past status changes from the git history of `data/roads.geojson`, and sets `statusSince` to the time of its first commit.
 
-   The file is written only when something new appeared. The commit message then includes, for example, `2 new alerts`.
+   The file is written only when something new appeared. The commit message then includes, for example, `2 new alerts, 1 status changes logged`.
 6. **Publish** (with `PUBLISH=1`):
    - The script commits `data/` if it differs from the last commit. Only `data/` is committed, never other local edits. The commit message summarises the change, for example `Update road data: 2 status, 2 updatedAt (source …)`.
    - If the clone is ahead of GitHub, it runs `pull --rebase --autostash` and then `push`.
@@ -185,7 +188,7 @@ Each run goes through six steps:
 ~~ re-routed Kalanchak-Chaplinka: 45.0 km (OSRM via 1 point(s), x1.98 straight line)  <-- check, long detour
 !! Some-Road: unknown status 'foo' - add it to STATUS_COLORS
 changed: 1 new, 2 status, 3 updatedAt -> GeoJSON written
-alert log: 2 new, 412 total -> alerts.json written
+alert log: 2 new activations, 1 new status changes, 412/97 total -> alerts.json written
 done: 37 segments (2 routed), source updatedAt 2026-11-17T22:49:13.612Z, statuses {...}
 publish: committed 'Update road data: 1 new, 2 status, 3 updatedAt (source ...)'
 publish: pushed
@@ -236,19 +239,25 @@ The published files are at `https://raw.githubusercontent.com/<you>/road-alerts-
 ### `data/alerts.json`
 
 ```json
-{"roads":{
+{"statusSince":"2026-11-18T11:18:25Z","roads":{
 "Doneck-Panteleimonovka":{"from":"Донецк","to":"Пантелеймоновка"},
 "Torez-Mius":{"from":"Торез","to":"Миус"}
 },"events":[
 {"id":"IUpPJHF_IoTA68ATbJARwEPiBzQwoe3V","intent":"threat","at":"2026-11-15T05:28:39.546773Z","roads":["Doneck-Panteleimonovka","Panteleimonovka-Gorlovka"]},
 {"id":"Phg1LQaObnJ3kFNTiFLaJVHrE5KD55Yb","intent":"clear","at":"2026-11-15T06:29:14.223479Z","roads":["Doneck-Panteleimonovka","Panteleimonovka-Gorlovka"]}
+],"changes":[
+{"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
+{"road":"Doneck-Panteleimonovka","status":"neutral","from":"busy","at":"2026-11-18T16:57:57.396Z"}
 ]}
 ```
+
+- `changes` are the status changes, oldest first. `at` is the road's `updatedAt` after the change, which is when the feed changed the status.
+- `statusSince` is when status logging began. Before that time, the log knows when threats started, but not when they ended, unless an all clear came.
 
 - `events` are the activations, oldest first. `id`, `intent` and `at` (the feed's `activatedAt`) come straight from the feed. `roads` lists the road IDs the activation covers.
 - `intent` is `threat` (an alert starts) or `clear` (all clear). Any other value is kept as is.
 - `roads` maps each road ID ever seen to its town names. Removed roads keep their names, so old events can still be labelled.
-- The file has one event per line, so each commit only adds lines. It grows by about 150 bytes per activation, which is roughly 1 to 2 MB a year at the current rate.
+- The file has one entry per line, so each commit only adds lines. It grows by about 150 bytes per activation or status change, roughly 1 to 3 MB a year at the current rate.
 - **Don't delete it.** The feed can't rebuild it: a fresh file starts with only the last few days. The history before that lives only in git.
 
 The log begins with the first run of this version. It is seeded with whatever is still in the feed's window at that point, about three days.

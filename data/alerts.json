@@ -138,5 +138,8 @@
 {"id":"Q29pXuqCWR9_4nR2X7I_aBetMTDFZaS_","intent":"threat","at":"2026-11-18T03:57:39.907124Z","roads":["Berdyansk-Mariupl"]},
 {"id":"xH0vr_kn0isx5E6Shmz84ZzhD-VZl-IC","intent":"threat","at":"2026-11-18T16:01:39.333962Z","roads":["Doneck-Panteleimonovka","Panteleimonovka-Gorlovka"]},
 {"id":"jI9pTi9j2KFaOTN3VXhdlITX7o0HF7jY","intent":"threat","at":"2026-11-18T17:55:23.506332Z","roads":["Debalcevo-Lugansk"]},
-{"id":"HMLm9XTQD1-V53RHxM-H4W5UHAvsECR4","intent":"threat","at":"2026-11-18T17:55:39.863482Z","roads":["Debalcevo-Mius"]}
+{"id":"HMLm9XTQD1-V53RHxM-H4W5UHAvsECR4","intent":"threat","at":"2026-11-18T17:55:39.863482Z","roads":["Debalcevo-Mius"]},
+{"id":"ryA0n8Xyl_8Ey7MhspEOtHOcbr0J06IA","intent":"threat","at":"2026-11-18T18:13:27.247410Z","roads":["Shahtersk-Torez"]},
+{"id":"YmZ6nE131AhlpSIPZpMLaSrH_oaTsmb0","intent":"threat","at":"2026-11-18T18:17:17.407133Z","roads":["Doneck-Harcisk"]},
+{"id":"D2JsSDjG1DkAEt5_bk90j4Xx5vk4rJDU","intent":"threat","at":"2026-11-18T18:17:21.737873Z","roads":["Harcisk-Shahtersk"]}
 ]}

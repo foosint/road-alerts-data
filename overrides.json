@@ -11,11 +11,6 @@
     }
   },
   "cities": {
-    "Veselovoznesenka": {
-      "lat": 47.1457,
-      "lon": 38.343,
-      "note": "OSM spells it Весело-Вознесенка, so geocoding the feed name finds nothing"
-    },
     "Volnovaha": {
       "lat": 47.587713,
       "lon": 37.518498
@@ -35,6 +30,34 @@
     "Kalanchak": {
       "lat": 46.281186,
       "lon": 33.274572
+    },
+    "Genichesk": {
+      "lat": 46.216347,
+      "lon": 34.668904
+    },
+    "Novogrigorovka": {
+      "lat": 46.443025,
+      "lon": 34.926043
+    },
+    "Inzovka": {
+      "lat": 46.732486,
+      "lon": 36.086244
+    },
+    "Berdyansk": {
+      "lat": 46.804531,
+      "lon": 36.659305
+    },
+    "Novoazovsk": {
+      "lat": 47.126731,
+      "lon": 38.086430
+    },
+    "Veselovoznesenka": {
+      "lat": 47.162662,
+      "lon": 38.350747
+    },
+    "Shahtersk": {
+      "lat": 48.034252,
+      "lon": 38.481512
     }
   },
   "roads": {}

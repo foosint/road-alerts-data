@@ -206,7 +206,7 @@ publish: pushed
         "activeAlert": null,
         "roadGroupIds": ["dnr"],
         "distance_km": 36.3,
-        "stroke": "#8a8f98"
+        "stroke": "#2f9e44"
       },
       "geometry": { "type": "LineString", "coordinates": [[38.618, 48.026], "..."] }
     }
@@ -228,13 +228,11 @@ Colours are set in `STATUS_COLORS` at the top of `build_geojson.py`:
 
 | status | colour |
 |---|---|
-| `neutral` | `#8a8f98` grey |
-| `clear` | `#2f9e44` green |
-| `threat`, `danger` | `#e03131` red |
-| `warning` | `#f08c00` orange |
+| `neutral` | `#2f9e44` green |
+| `warn` | `#e03131` red |
 | anything else | `#ae3ec9` purple, with a warning in the console |
 
-The feed has so far shown only `neutral`. The other statuses are assumptions, so add real ones as they appear. A colour change counts as a change, so it gets published.
+The feed uses only `neutral` and `warn`. If a new status appears, add it here. A colour change counts as a change, so it gets published.
 
 ## Manual corrections
 

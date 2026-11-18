@@ -306,13 +306,13 @@
    "properties": {
     "id": "Mius",
     "name": "Миус",
-    "overridden": false
+    "overridden": true
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     38.544331,
-     48.288585
+     38.534434,
+     48.293532
     ]
    }
   },

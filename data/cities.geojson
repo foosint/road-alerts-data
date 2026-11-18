@@ -36,13 +36,13 @@
    "properties": {
     "id": "Berdyansk",
     "name": "Бердянск",
-    "overridden": false
+    "overridden": true
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     36.788762,
-     46.755678
+     36.659305,
+     46.804531
     ]
    }
   },
@@ -141,13 +141,13 @@
    "properties": {
     "id": "Genichesk",
     "name": "Геническ",
-    "overridden": false
+    "overridden": true
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     34.808883,
-     46.16617
+     34.668904,
+     46.216347
     ]
    }
   },
@@ -186,13 +186,13 @@
    "properties": {
     "id": "Inzovka",
     "name": "Инзовка",
-    "overridden": false
+    "overridden": true
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     36.080421,
-     46.751122
+     36.086244,
+     46.732486
     ]
    }
   },
@@ -336,13 +336,13 @@
    "properties": {
     "id": "Novoazovsk",
     "name": "Новоазовск",
-    "overridden": false
+    "overridden": true
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     38.083091,
-     47.113872
+     38.08643,
+     47.126731
     ]
    }
   },
@@ -351,13 +351,13 @@
    "properties": {
     "id": "Novogrigorovka",
     "name": "Новогригоровка",
-    "overridden": false
+    "overridden": true
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     34.974541,
-     46.413429
+     34.926043,
+     46.443025
     ]
    }
   },
@@ -411,13 +411,13 @@
    "properties": {
     "id": "Shahtersk",
     "name": "Шахтёрск",
-    "overridden": false
+    "overridden": true
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     38.445947,
-     48.055042
+     38.481512,
+     48.034252
     ]
    }
   },
@@ -491,8 +491,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     38.343,
-     47.1457
+     38.350747,
+     47.162662
     ]
    }
   },

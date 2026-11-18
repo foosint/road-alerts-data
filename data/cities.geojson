@@ -441,13 +441,13 @@
    "properties": {
     "id": "Tokmak",
     "name": "Токмак",
-    "overridden": false
+    "overridden": true
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     35.709221,
-     47.255019
+     35.722885,
+     47.271065
     ]
    }
   },

@@ -92,7 +92,7 @@ Open the crontab with `crontab -e`:
 
 - `flock -n` skips a run if the previous one is still busy.
 - Use the full path to `uv`, because cron has a minimal `PATH`.
-- A run without changes makes no geocoding, routing or git network requests.
+- A run without changes makes no geocoding, routing or git network requests. A changed `source.updatedAt` alone needs no geocoding or routing either, only a commit and push.
 
 ### Keeping the automated commits off your GitHub profile
 
@@ -108,7 +108,7 @@ Two things to keep this way:
 
 You don't need a separate bot account. You would only need one if the repo should be owned by someone else, for example a GitHub organization.
 
-Commits happen only when the data changed, not on every 5-minute run.
+Commits happen only when the data changed. That includes a new `source.updatedAt`, so if the feed refreshes its timestamp every few minutes, expect a commit on most runs. Each commit changes only a few bytes, and git stores it as a small delta.
 
 ### Editing from another machine
 
@@ -158,9 +158,10 @@ Each run goes through five steps:
    - a segment was added or removed;
    - a segment's `status`, `updatedAt` or route changed;
    - any other segment property changed;
-   - a town changed.
+   - a town changed;
+   - the feed's `source.updatedAt` changed, even if no segment changed. This keeps the "Feed updated" time on the map current.
 
-   A newer `source.updatedAt` alone, i.e. the feed was refreshed but nothing in it changed, does **not** count. Without a change, the files are left untouched.
+   Without a change, the files are left untouched.
 5. **Publish** (with `PUBLISH=1`):
    - The script commits `data/` if it differs from the last commit. Only `data/` is committed, never other local edits. The commit message summarises the change, for example `Update road data: 2 status, 2 updatedAt (source …)`.
    - If the clone is ahead of GitHub, it runs `pull --rebase --autostash` and then `push`.
@@ -214,7 +215,7 @@ publish: pushed
 }
 ```
 
-- `source` is copied from the feed at the time of the last change.
+- `source` is copied from the feed. `source.updatedAt` is the time of the feed's last update.
 - `updatedAt` on each feature is that segment's own last update.
 - `id` matches the road `id` in `roads.json`.
 - `stroke` is the line colour for the status. The site uses it directly, and so does any tool that follows the simplestyle convention.

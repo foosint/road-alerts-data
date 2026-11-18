@@ -225,7 +225,8 @@ def build_route(road, coords, overrides, route_cache):
 def describe_changes(old, new):
     """List what differs between two roads FeatureCollections.
 
-    generatedAt and source are ignored: a feed refresh alone is not a change.
+    A new source.updatedAt counts too, so the map can show when the feed was last
+    updated. generatedAt and the other source fields are ignored.
     """
     if not old:
         return ["initial build"]
@@ -242,6 +243,8 @@ def describe_changes(old, new):
     changes = [f"{v} {k}" for k, v in counts.items() if v]
     if not changes and [f["properties"] for f in old.get("features", [])] != [f["properties"] for f in new["features"]]:
         changes.append("properties")  # e.g. activeAlert, order, colour mapping
+    if (old.get("source") or {}).get("updatedAt") != (new.get("source") or {}).get("updatedAt"):
+        changes.append("source updatedAt")
     return changes
 
 

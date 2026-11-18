@@ -21,13 +21,13 @@
    "properties": {
     "id": "Artemovsk",
     "name": "Артёмовск",
-    "overridden": false
+    "overridden": true
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     38.002099,
-     48.589412
+     38.07141,
+     48.604138
     ]
    }
   },
@@ -116,8 +116,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.823858,
-     47.93313
+     37.918713,
+     48.023198
     ]
    }
   },
@@ -381,13 +381,13 @@
    "properties": {
     "id": "Panteleimonovka",
     "name": "Пантелеймоновка",
-    "overridden": false
+    "overridden": true
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.972905,
-     48.207145
+     37.954917,
+     48.212372
     ]
    }
   },

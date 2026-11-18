@@ -164,5 +164,6 @@
 {"road":"Doneck-Harcisk","status":"neutral","from":"clear","at":"2026-11-18T19:46:00.346Z"},
 {"road":"Harcisk-Shahtersk","status":"neutral","from":"clear","at":"2026-11-18T19:46:00.346Z"},
 {"road":"Shahtersk-Torez","status":"neutral","from":"clear","at":"2026-11-18T19:46:00.346Z"},
-{"road":"Debalcevo-Lugansk","status":"busy","from":"neutral","at":"2026-11-18T21:10:50.135Z"}
+{"road":"Debalcevo-Lugansk","status":"busy","from":"neutral","at":"2026-11-18T21:10:50.135Z"},
+{"road":"Debalcevo-Lugansk","status":"neutral","from":"busy","at":"2026-11-18T22:22:06.241Z"}
 ]}

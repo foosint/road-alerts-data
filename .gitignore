@@ -1,0 +1,20 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+.mypy_cache/
+
+# Local settings (secrets, paths)
+.env
+run.log
+
+# Rebuildable working state (re-geocoded / re-routed on demand)
+cache/
+# Latest downloaded feed (input only)
+roads.json

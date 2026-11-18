@@ -1,0 +1,515 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Armyansk",
+    "name": "Армянск",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     33.6908,
+     46.1039
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Artemovsk",
+    "name": "Артёмовск",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     38.0021,
+     48.5894
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Berdyansk",
+    "name": "Бердянск",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     36.7888,
+     46.7557
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Chaplinka",
+    "name": "Чаплинка",
+    "overridden": true
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     33.553569,
+     46.351394
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Chongar",
+    "name": "Чонгар",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     34.5454,
+     46.0312
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Debalcevo",
+    "name": "Дебальцево",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     38.3999,
+     48.3397
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Djankoi",
+    "name": "Джанкой",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     34.3927,
+     45.712
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Doneck",
+    "name": "Донецк",
+    "overridden": true
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     37.823858,
+     47.93313
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Enakievo",
+    "name": "Енакиево",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     38.185,
+     48.2305
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Genichesk",
+    "name": "Геническ",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     34.8089,
+     46.1662
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Gorlovka",
+    "name": "Горловка",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     38.0028,
+     48.3059
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Harcisk",
+    "name": "Харцызск",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     38.1498,
+     48.034
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Inzovka",
+    "name": "Инзовка",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     36.0804,
+     46.7511
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Kalanchak",
+    "name": "Каланчак",
+    "overridden": true
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     33.274572,
+     46.281186
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "KrasniyLuch",
+    "name": "Красный Луч",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     38.9199,
+     48.1351
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Krasnoperekopsk",
+    "name": "Красноперекопск",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     33.8169,
+     45.957
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Kuibyshevo",
+    "name": "Куйбышево",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     38.9083,
+     47.8118
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Lugansk",
+    "name": "Луганск",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     39.2973,
+     48.5717
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Mariupl",
+    "name": "Мариуполь",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     37.55,
+     47.0958
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Melitopol",
+    "name": "Мелитополь",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     35.3827,
+     46.8467
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Mius",
+    "name": "Миус",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     38.5443,
+     48.2886
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Molochansk",
+    "name": "Молочанск",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     35.5974,
+     47.2065
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Novoazovsk",
+    "name": "Новоазовск",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     38.0831,
+     47.1139
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Novogrigorovka",
+    "name": "Новогригоровка",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     34.9745,
+     46.4134
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Novotroickoe",
+    "name": "Новотроицкое",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     34.3364,
+     46.3558
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Panteleimonovka",
+    "name": "Пантелеймоновка",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     37.9729,
+     48.2071
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Prishib",
+    "name": "Пришиб",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     35.3233,
+     47.2586
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Shahtersk",
+    "name": "Шахтёрск",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     38.4459,
+     48.055
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Telmanovo",
+    "name": "Тельманово",
+    "overridden": true
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     38.016873,
+     47.410115
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Tokmak",
+    "name": "Токмак",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     35.7092,
+     47.255
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Torez",
+    "name": "Торез",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     38.6181,
+     48.0261
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Veseloe",
+    "name": "Весёлое",
+    "overridden": false
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     34.9211,
+     47.0179
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Veselovoznesenka",
+    "name": "Веселовознесенка",
+    "overridden": true
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     38.343,
+     47.1457
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Volnovaha",
+    "name": "Волноваха",
+    "overridden": true
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     37.518498,
+     47.587713
+    ]
+   }
+  }
+ ]
+}

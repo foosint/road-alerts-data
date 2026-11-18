@@ -1,0 +1,41 @@
+{
+  "_help": "Manual corrections. Any change here re-routes only the affected segments on the next run. Coordinates are [lat, lon].",
+  "_examples": {
+    "cities": {
+      "Mius": { "lat": 48.2886, "lon": 38.5443, "note": "moves this endpoint for every segment that uses it" }
+    },
+    "roads": {
+      "Kalanchak-Chaplinka": { "via": [[46.3245, 33.4844]], "note": "force the route through waypoint(s)" },
+      "Torez-Mius": { "from": [48.03, 38.61], "to": [48.29, 38.54], "note": "per-segment endpoint fix" },
+      "Some-Road": { "geometry": { "type": "LineString", "coordinates": [[38.0, 48.0], [38.1, 48.1]] }, "note": "hand-drawn line, GeoJSON order [lon, lat], no routing" }
+    }
+  },
+  "cities": {
+    "Veselovoznesenka": {
+      "lat": 47.1457,
+      "lon": 38.343,
+      "note": "OSM spells it Весело-Вознесенка, so geocoding the feed name finds nothing"
+    },
+    "Volnovaha": {
+      "lat": 47.587713,
+      "lon": 37.518498
+    },
+    "Telmanovo": {
+      "lat": 47.410115, 
+      "lon": 38.016873
+    },
+    "Doneck": {
+      "lat": 47.933130,
+      "lon": 37.823858
+    },
+    "Chaplinka": {
+      "lat": 46.351394,
+      "lon": 33.553569
+    },
+    "Kalanchak": {
+      "lat": 46.281186,
+      "lon": 33.274572
+    }
+  },
+  "roads": {}
+}

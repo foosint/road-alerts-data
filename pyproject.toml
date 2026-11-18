@@ -1,0 +1,7 @@
+[project]
+name = "road-alerts-data"
+version = "0.1.0"
+description = "Builds GeoJSON road paths with alert status from the roads.json feed"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []

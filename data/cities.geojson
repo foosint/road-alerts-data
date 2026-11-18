@@ -276,13 +276,13 @@
    "properties": {
     "id": "Mariupl",
     "name": "Мариуполь",
-    "overridden": false
+    "overridden": true
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.549962,
-     47.095765
+     37.54331,
+     47.097098
     ]
    }
   },

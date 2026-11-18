@@ -229,10 +229,10 @@ Colours are set in `STATUS_COLORS` at the top of `build_geojson.py`:
 | status | colour |
 |---|---|
 | `neutral` | `#2f9e44` green |
-| `warn` | `#e03131` red |
+| `busy` | `#e03131` red |
 | anything else | `#ae3ec9` purple, with a warning in the console |
 
-The feed uses only `neutral` and `warn`. If a new status appears, add it here. A colour change counts as a change, so it gets published.
+The feed uses only `neutral` and `busy`. If a new status appears, add it here. A colour change counts as a change, so it gets published.
 
 ## Manual corrections
 

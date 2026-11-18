@@ -52,7 +52,7 @@ UA = {"User-Agent": "road-geojson-builder/1.0"}
 # Line colour per status (simplestyle "stroke"). Unknown statuses get UNKNOWN_COLOR and a warning.
 STATUS_COLORS = {
     "neutral": "#2f9e44",
-    "warn": "#e03131",
+    "busy": "#e03131",
 }
 UNKNOWN_COLOR = "#ae3ec9"
 

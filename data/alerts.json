@@ -181,5 +181,6 @@
 {"road":"Enakievo-Shahtersk","status":"busy","from":"neutral","at":"2026-11-19T05:36:10.515Z"},
 {"road":"Inzovka-Berdyansk","status":"neutral","from":"busy","at":"2026-11-19T05:40:09.620Z"},
 {"road":"Melitopl-Inzovka","status":"neutral","from":"busy","at":"2026-11-19T05:40:44.644Z"},
-{"road":"Debalcevo-Lugansk","status":"clear","from":"busy","at":"2026-11-19T05:49:07.972Z"}
+{"road":"Debalcevo-Lugansk","status":"clear","from":"busy","at":"2026-11-19T05:49:07.972Z"},
+{"road":"Debalcevo-Lugansk","status":"neutral","from":"clear","at":"2026-11-19T06:06:00.381Z"}
 ]}

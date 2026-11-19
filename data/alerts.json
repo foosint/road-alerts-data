@@ -247,5 +247,6 @@
 {"road":"Gorlovka-Debalcevo","status":"neutral","from":"busy","at":"2026-11-19T20:11:16.447Z"},
 {"road":"Enakievo-Shahtersk","status":"neutral","from":"busy","at":"2026-11-19T20:28:00.116Z"},
 {"road":"Doneck-Harcisk","status":"busy","from":"neutral","at":"2026-11-19T20:46:42.693Z"},
-{"road":"Doneck-Harcisk","status":"clear","from":"busy","at":"2026-11-19T22:10:18.167Z"}
+{"road":"Doneck-Harcisk","status":"clear","from":"busy","at":"2026-11-19T22:10:18.167Z"},
+{"road":"Doneck-Harcisk","status":"neutral","from":"clear","at":"2026-11-19T22:26:00.472Z"}
 ]}

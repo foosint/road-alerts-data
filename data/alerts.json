@@ -163,7 +163,9 @@
 {"id":"xznl3rgV0dZlfnj3B4Sn40i4MGApVZWY","intent":"clear","at":"2026-11-19T09:43:08.156995Z","roads":["Debalcevo-Lugansk"]},
 {"id":"NY3icDQnNg2EZbt6fvdM1qJPv8OuzteC","intent":"clear","at":"2026-11-19T09:43:46.118288Z","roads":["Gorlovka-Debalcevo"]},
 {"id":"99AeMEPx5v6hBtL9m6Kh6Z6uYIErxzE1","intent":"clear","at":"2026-11-19T10:16:32.435588Z","roads":["Doneck-Panteleimonovka","Panteleimonovka-Gorlovka"]},
-{"id":"zPCh8VWNQZvVJUbyfH8C5WoOwKIEQNOH","intent":"threat","at":"2026-11-19T12:39:03.888200Z","roads":["Doneck-Panteleimonovka","Panteleimonovka-Gorlovka"]}
+{"id":"zPCh8VWNQZvVJUbyfH8C5WoOwKIEQNOH","intent":"threat","at":"2026-11-19T12:39:03.888200Z","roads":["Doneck-Panteleimonovka","Panteleimonovka-Gorlovka"]},
+{"id":"q8Jr0F4fzjL-rKLsqsEpEZpZpnQoTxfZ","intent":"threat","at":"2026-11-19T14:28:05.179140Z","roads":["Gorlovka-Debalcevo"]},
+{"id":"xh-EBmoTKXBL9YZod1NQEJdv8yyZm36z","intent":"threat","at":"2026-11-19T14:28:25.681835Z","roads":["Doneck-Panteleimonovka","Panteleimonovka-Gorlovka"]}
 ],"changes":[
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
@@ -217,5 +219,8 @@
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-19T12:39:03.978Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-19T12:39:03.978Z"},
 {"road":"Doneck-Panteleimonovka","status":"neutral","from":"busy","at":"2026-11-19T13:39:24.756Z"},
-{"road":"Panteleimonovka-Gorlovka","status":"neutral","from":"busy","at":"2026-11-19T13:39:24.756Z"}
+{"road":"Panteleimonovka-Gorlovka","status":"neutral","from":"busy","at":"2026-11-19T13:39:24.756Z"},
+{"road":"Gorlovka-Debalcevo","status":"busy","from":"neutral","at":"2026-11-19T14:28:06.317Z"},
+{"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-19T14:28:26.330Z"},
+{"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-19T14:28:26.330Z"}
 ]}

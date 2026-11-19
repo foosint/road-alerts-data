@@ -188,5 +188,6 @@
 {"road":"Debalcevo-Lugansk","status":"neutral","from":"clear","at":"2026-11-19T06:06:00.381Z"},
 {"road":"Artemovsk-Debalcevo","status":"clear","from":"busy","at":"2026-11-19T06:25:36.063Z"},
 {"road":"Gorlovka-Debalcevo","status":"clear","from":"busy","at":"2026-11-19T06:35:36.293Z"},
-{"road":"Enakievo-Shahtersk","status":"clear","from":"busy","at":"2026-11-19T06:35:48.305Z"}
+{"road":"Enakievo-Shahtersk","status":"clear","from":"busy","at":"2026-11-19T06:35:48.305Z"},
+{"road":"Artemovsk-Debalcevo","status":"neutral","from":"clear","at":"2026-11-19T06:46:00.673Z"}
 ]}

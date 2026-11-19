@@ -177,5 +177,7 @@
 {"road":"Artemovsk-Debalcevo","status":"busy","from":"neutral","at":"2026-11-19T04:47:40.093Z"},
 {"road":"Inzovka-Berdyansk","status":"busy","from":"neutral","at":"2026-11-19T05:25:10.174Z"},
 {"road":"Melitopl-Inzovka","status":"busy","from":"neutral","at":"2026-11-19T05:25:45.181Z"},
-{"road":"Enakievo-Shahtersk","status":"busy","from":"neutral","at":"2026-11-19T05:36:10.515Z"}
+{"road":"Enakievo-Shahtersk","status":"busy","from":"neutral","at":"2026-11-19T05:36:10.515Z"},
+{"road":"Inzovka-Berdyansk","status":"neutral","from":"busy","at":"2026-11-19T05:40:09.620Z"},
+{"road":"Melitopl-Inzovka","status":"neutral","from":"busy","at":"2026-11-19T05:40:44.644Z"}
 ]}

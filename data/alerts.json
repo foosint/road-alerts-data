@@ -242,5 +242,6 @@
 {"road":"Mariupl-Novoazovsk","status":"neutral","from":"busy","at":"2026-11-19T19:55:07.039Z"},
 {"road":"Novoazovsk-Veselovoznesenka","status":"neutral","from":"busy","at":"2026-11-19T19:55:07.039Z"},
 {"road":"Berdyansk-Mariupl","status":"neutral","from":"busy","at":"2026-11-19T19:58:01.090Z"},
-{"road":"Gorlovka-Debalcevo","status":"neutral","from":"busy","at":"2026-11-19T20:11:16.447Z"}
+{"road":"Gorlovka-Debalcevo","status":"neutral","from":"busy","at":"2026-11-19T20:11:16.447Z"},
+{"road":"Enakievo-Shahtersk","status":"neutral","from":"busy","at":"2026-11-19T20:28:00.116Z"}
 ]}

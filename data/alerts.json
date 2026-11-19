@@ -204,5 +204,7 @@
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-19T09:04:54.016Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-19T09:04:54.016Z"},
 {"road":"Debalcevo-Lugansk","status":"clear","from":"busy","at":"2026-11-19T09:43:09.195Z"},
-{"road":"Gorlovka-Debalcevo","status":"clear","from":"busy","at":"2026-11-19T09:43:47.088Z"}
+{"road":"Gorlovka-Debalcevo","status":"clear","from":"busy","at":"2026-11-19T09:43:47.088Z"},
+{"road":"Debalcevo-Lugansk","status":"neutral","from":"clear","at":"2026-11-19T10:06:00.913Z"},
+{"road":"Gorlovka-Debalcevo","status":"neutral","from":"clear","at":"2026-11-19T10:06:00.913Z"}
 ]}

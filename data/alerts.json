@@ -279,5 +279,7 @@
 {"road":"Novoazovsk-Veselovoznesenka","status":"neutral","from":"clear","at":"2026-11-20T07:39:37.898Z"},
 {"road":"Harcisk-Shahtersk","status":"clear","from":"busy","at":"2026-11-20T08:27:13.320Z"},
 {"road":"Doneck-Harcisk","status":"clear","from":"busy","at":"2026-11-20T08:27:40.243Z"},
-{"road":"Debalcevo-Lugansk","status":"busy","from":"neutral","at":"2026-11-20T08:30:33.320Z"}
+{"road":"Debalcevo-Lugansk","status":"busy","from":"neutral","at":"2026-11-20T08:30:33.320Z"},
+{"road":"Harcisk-Shahtersk","status":"neutral","from":"clear","at":"2026-11-20T08:42:12.703Z"},
+{"road":"Doneck-Harcisk","status":"neutral","from":"clear","at":"2026-11-20T08:42:39.715Z"}
 ]}

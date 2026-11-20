@@ -11,7 +11,10 @@ Each run:
      added/removed, its status, updatedAt or route changed, or source.updatedAt changed
   5. merges each road's latestActivations (a rolling window in the feed) and every
      status change into data/alerts.json, a permanent log that only grows
-  6. if PUBLISH=1: commits data/ in this repo and pushes it (only when something
+  6. fire signals: downloads the NASA FIRMS 24h hotspot files (at most every
+     FIRMS_EVERY_MIN minutes) and writes data/fires.geojson with the hotspots of the
+     last 24 hours within FIRMS_MAX_KM of a road segment
+  7. if PUBLISH=1: commits data/ in this repo and pushes it (only when something
      changed); the road-alerts site reads the files from this repo
 
 Settings come from environment variables or a .env file next to this script
@@ -24,6 +27,8 @@ Usage:
 """
 
 import argparse
+import csv
+import io
 import hashlib
 import json
 import math
@@ -45,6 +50,19 @@ DATA_DIR = HERE / "data"  # published: committed and pushed on every change
 OUT_ROADS = DATA_DIR / "roads.geojson"
 OUT_CITIES = DATA_DIR / "cities.geojson"
 OUT_ALERTS = DATA_DIR / "alerts.json"  # permanent log of alert activations
+OUT_FIRES = DATA_DIR / "fires.geojson"  # FIRMS hotspots near the roads, last 24 h
+FIRMS_CACHE = HERE / "cache" / "firms.json"
+
+# NASA FIRMS near-real-time 24h files, no API key needed. The Russia_Asia region starts
+# at 26 deg E and covers all roads; the Europe region stops at about 35 deg E.
+FIRMS_BASE = "https://firms.modaps.eosdis.nasa.gov/data/active_fire/"
+FIRMS_SOURCES = {  # file -> satellite name shown on the map
+    "suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_Russia_Asia_24h.csv": "Suomi NPP (VIIRS)",
+    "noaa-20-viirs-c2/csv/J1_VIIRS_C2_Russia_Asia_24h.csv": "NOAA-20 (VIIRS)",
+    "noaa-21-viirs-c2/csv/J2_VIIRS_C2_Russia_Asia_24h.csv": "NOAA-21 (VIIRS)",
+    "modis-c6.1/csv/MODIS_C6_1_Russia_Asia_24h.csv": "MODIS",
+}
+FIRMS_HOURS = 24
 
 OSRM = "https://router.project-osrm.org/route/v1/driving/{coords}?overview=full&geometries=geojson"
 NOMINATIM = "https://nominatim.openstreetmap.org/search"
@@ -348,6 +366,143 @@ def save_alerts(path, log):
     tmp.replace(path)
 
 
+# ---------------------------------------------------------------- FIRMS fire signals
+
+def point_line_km(p, lines):
+    """Shortest distance (km) from p = (lon, lat) to polylines [[lon, lat], ...].
+
+    Uses a flat projection around p, accurate to well under 1 % at these distances.
+    """
+    kx = 111.32 * math.cos(math.radians(p[1]))
+    ky = 110.57
+    best = math.inf
+    for line in lines:
+        for a, b in zip(line, line[1:]):
+            ax, ay = (a[0] - p[0]) * kx, (a[1] - p[1]) * ky
+            bx, by = (b[0] - p[0]) * kx, (b[1] - p[1]) * ky
+            dx, dy = bx - ax, by - ay
+            seg = dx * dx + dy * dy
+            t = 0 if seg == 0 else max(0.0, min(1.0, -(ax * dx + ay * dy) / seg))
+            best = min(best, math.hypot(ax + t * dx, ay + t * dy))
+    return best
+
+
+def road_lines(feature):
+    g = feature["geometry"]
+    return g["coordinates"] if g["type"] == "MultiLineString" else [g["coordinates"]]
+
+
+def firms_confidence(v):
+    """VIIRS gives low/nominal/high (or l/n/h), MODIS a percentage; all become low/nominal/high."""
+    v = (v or "").strip().lower()
+    words = {"l": "low", "n": "nominal", "h": "high"}
+    if v[:1] in words and not v[:1].isdigit():
+        return words[v[:1]]
+    try:
+        n = float(v)
+    except ValueError:
+        return None
+    return "low" if n < 30 else "nominal" if n < 80 else "high"
+
+
+def fetch_firms(bbox, offline):
+    """Hotspots inside bbox (lon_min, lat_min, lon_max, lat_max), per FIRMS source file.
+
+    Downloads at most every FIRMS_EVERY_MIN minutes and keeps the result in
+    cache/firms.json; a source that fails keeps its previous points.
+    """
+    cache = load_json(FIRMS_CACHE, {"fetchedAt": None, "points": {}})
+    every = float(os.environ.get("FIRMS_EVERY_MIN", "15"))
+    last = cache.get("fetchedAt")
+    age_min = (time.time() - parse_iso(last)) / 60 if last else math.inf
+    if offline or age_min < every:
+        return cache["points"], False
+    w, s, e, n = bbox
+    for path in FIRMS_SOURCES:
+        try:
+            text = http_get(FIRMS_BASE + path, retries=2).decode("utf-8", "replace")
+        except Exception as ex:
+            print(f"!! FIRMS {path.rsplit('/', 1)[-1]}: {ex} - keeping the previous points")
+            continue
+        pts = []
+        for r in csv.DictReader(io.StringIO(text)):
+            try:
+                lat, lon = float(r["latitude"]), float(r["longitude"])
+            except (KeyError, ValueError):
+                continue
+            if not (w <= lon <= e and s <= lat <= n):
+                continue
+            hhmm = r.get("acq_time", "").zfill(4)
+            try:
+                frp = float(r["frp"])
+            except (KeyError, ValueError):
+                frp = None
+            pts.append({
+                "lon": round(lon, 5), "lat": round(lat, 5),
+                "t": f"{r['acq_date']}T{hhmm[:2]}:{hhmm[2:]}:00Z",
+                "conf": firms_confidence(r.get("confidence")),
+                "frp": frp,
+                "day": r.get("daynight") == "D",
+            })
+        cache["points"][path] = pts
+    cache["fetchedAt"] = now_iso()
+    save_json(FIRMS_CACHE, cache, indent=None)
+    return cache["points"], True
+
+
+def parse_iso(v):
+    return datetime.fromisoformat(v.replace("Z", "+00:00")).timestamp()
+
+
+def build_fires(features, offline):
+    """(FeatureCollection of the hotspots of the last FIRMS_HOURS hours near a road, downloaded?)."""
+    max_km = float(os.environ.get("FIRMS_MAX_KM", "3"))
+    lines = {f["properties"]["id"]: road_lines(f) for f in features}
+    coords = [c for ls in lines.values() for line in ls for c in line]
+    if not coords:
+        return None
+    dlat = max_km / 110.57
+    dlon = max_km / (111.32 * math.cos(math.radians(max(abs(c[1]) for c in coords))))
+    bbox = (min(c[0] for c in coords) - dlon, min(c[1] for c in coords) - dlat,
+            max(c[0] for c in coords) + dlon, max(c[1] for c in coords) + dlat)
+    sources, fetched = fetch_firms(bbox, offline)
+    # per road: its bounding box grown by max_km, a quick reject before the exact distance
+    boxes = {}
+    for rid, ls in lines.items():
+        xs = [c[0] for line in ls for c in line]
+        ys = [c[1] for line in ls for c in line]
+        boxes[rid] = (min(xs) - dlon, min(ys) - dlat, max(xs) + dlon, max(ys) + dlat)
+    cutoff = time.time() - FIRMS_HOURS * 3600
+    out, seen = [], set()
+    for path, pts in sources.items():
+        sat = FIRMS_SOURCES.get(path, path)
+        for p in pts:
+            if parse_iso(p["t"]) < cutoff:
+                continue
+            key = (sat, p["t"], p["lon"], p["lat"])
+            if key in seen:
+                continue
+            seen.add(key)
+            best = None
+            for rid, (x0, y0, x1, y1) in boxes.items():
+                if x0 <= p["lon"] <= x1 and y0 <= p["lat"] <= y1:
+                    d = point_line_km((p["lon"], p["lat"]), lines[rid])
+                    if d <= max_km and (best is None or d < best[1]):
+                        best = (rid, d)
+            if best:
+                out.append({
+                    "type": "Feature",
+                    "properties": {
+                        "id": hashlib.sha1(repr(key).encode()).hexdigest()[:12],
+                        "t": p["t"], "sat": sat, "conf": p["conf"], "frp": p["frp"], "day": p["day"],
+                        "road": best[0], "km": round(best[1], 2),
+                    },
+                    "geometry": {"type": "Point", "coordinates": [p["lon"], p["lat"]]},
+                })
+    out.sort(key=lambda f: (f["properties"]["t"], f["properties"]["id"]))
+    return {"type": "FeatureCollection", "maxKm": max_km, "hours": FIRMS_HOURS, "features": out}, fetched
+
+
 # ---------------------------------------------------------------- publish
 
 def git(repo, *args):
@@ -492,6 +647,24 @@ def main():
         changes.append(", ".join(filter(None, what)) or "alert log")
         print(f"alert log: {new_alerts} new activations, {new_changes} new status changes, "
               f"{len(alerts['events'])}/{len(alerts['changes'])} total -> alerts.json written")
+    try:
+        fires = build_fires(features, args.offline)
+    except Exception as e:  # fire signals are extra: never let them break the road update
+        print(f"!! fire signals skipped: {e}")
+        fires = None
+    if fires:
+        new_fires, fetched = fires
+        old_fires = load_json(OUT_FIRES, None) or {}
+        if old_fires.get("features") != new_fires["features"] or old_fires.get("maxKm") != new_fires["maxKm"]:
+            new_fires["updatedAt"] = now_iso()
+            save_json(OUT_FIRES, new_fires, indent=None)
+            changes.append(f"{len(new_fires['features'])} fire signals")
+            print(f"fire signals: {len(new_fires['features'])} within {new_fires['maxKm']:g} km of a road "
+                  f"in the last {FIRMS_HOURS} h -> fires.geojson written")
+        else:
+            print(f"fire signals: unchanged, {len(new_fires['features'])} "
+                  f"({'downloaded' if fetched else 'from cache'})")
+
     print(f"done: {len(features)} segments ({changed} routed), source updatedAt "
           f"{feed.get('source', {}).get('updatedAt')}, statuses {statuses}")
 

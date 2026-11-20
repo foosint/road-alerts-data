@@ -9,10 +9,13 @@ The feed lists road segments as from/to pairs of towns in Crimea, Kherson, Zapor
 
 It also keeps a permanent log of every alert activation and every status change in `data/alerts.json`. The site builds its alert log, the per-road history and the alerts-by-hour charts from it.
 
+It also writes `data/fires.geojson`: the [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov/) satellite heat signals (hotspots) of the last 24 hours that lie within 3 km of a road segment.
+
 It is meant to run as a cron job on a Raspberry Pi. When something has changed, it commits `data/` and pushes this repo.
 
 ```
-cron (Pi) ── build_geojson.py ──► data/roads.geojson, data/cities.geojson, data/alerts.json
+cron (Pi) ── build_geojson.py ──► data/roads.geojson, data/cities.geojson, data/alerts.json,
+                                   data/fires.geojson
                                        │ only if something changed
                                        ▼
                          git commit data/ + push (this repo)
@@ -48,6 +51,8 @@ Settings come from environment variables or a `.env` file next to the script. Re
 | Variable | Default | Meaning |
 |---|---|---|
 | `ROADS_URL` | — | Feed URL. Without it, and without `--url`, the local `roads.json` is used. |
+| `FIRMS_MAX_KM` | `3` | Fire signals farther than this from every road segment are left out. |
+| `FIRMS_EVERY_MIN` | `15` | Download the FIRMS files at most this often. Runs in between reuse `cache/firms.json`. |
 | `PUBLISH` | `0` | `1` commits `data/` and pushes after a change. Set it **only on the Pi**, so that one machine writes the data. |
 | `PUBLISH_SSH_KEY` | — | Private key file for git over SSH, i.e. the deploy key. |
 | `PUBLISH_GIT_NAME` / `PUBLISH_GIT_EMAIL` | `road-alerts-data` / `road-alerts-data@bot.invalid` | Author of the data commits. |
@@ -125,12 +130,14 @@ Don't run with `PUBLISH=1` on a second machine. Both machines would then commit 
 | `data/roads.geojson` | yes | script | **Published:** one LineString per segment. |
 | `data/cities.geojson` | yes | script | **Published:** one Point per town. |
 | `data/alerts.json` | yes | script | **Published:** permanent log of alert activations. It only grows, and it is the only lasting record of past alerts. See [`data/alerts.json`](#dataalertsjson). |
+| `data/fires.geojson` | yes | script | **Published:** FIRMS fire signals near the roads, last 24 hours. Rebuilt on every run. See [`data/fires.geojson`](#datafiresgeojson). |
 | `overrides.json` | yes | **you** | Manual corrections to coordinates and routes. See [Manual corrections](#manual-corrections). |
 | `build_geojson.py` | yes | — | The script. |
 | `.env` | no | **you** | Local settings. See `.env.example`. |
 | `roads.json` | no | script | Latest downloaded feed. Overwritten only when a download is valid (contains a `roads` list). |
 | `cache/cities.json` | no | script | Coordinates found for each town. |
 | `cache/routes.json` | no | script | Route geometry for each segment, with a fingerprint of the inputs it was built from. |
+| `cache/firms.json` | no | script | The FIRMS hotspots inside the roads' area from the last download, and when it happened. |
 | `run.log` | no | cron | Log output. |
 
 `cache/` is local working state. If you delete it, every town is geocoded and every segment is routed again on the next run. Anything that must not be lost belongs in `overrides.json`, which is in git.
@@ -174,7 +181,13 @@ Each run goes through six steps:
      - On the first run of this version, `statusSince` is missing from the log. The script then recovers the past status changes from the git history of `data/roads.geojson`, and sets `statusSince` to the time of its first commit.
 
    The file is written only when something new appeared. The commit message then includes, for example, `2 new alerts, 1 status changes logged`.
-6. **Publish** (with `PUBLISH=1`):
+6. **Fire signals** in `data/fires.geojson`:
+   - The script downloads the FIRMS 24-hour files for the region "Russia_Asia" from four satellite sources: VIIRS on Suomi NPP, NOAA-20 and NOAA-21, and MODIS. These public files need no API key. The region starts at 26° E and covers all roads; the "Europe" region stops at about 35° E and would miss the east.
+   - It downloads at most every `FIRMS_EVERY_MIN` minutes (default 15) and keeps only the hotspots inside the roads' area in `cache/firms.json`. If one source fails, its points from the last download are kept.
+   - It keeps a hotspot if it is at most `FIRMS_MAX_KM` (default 3 km) from the nearest road segment and was detected in the last 24 hours. Each one is tagged with that road and its distance.
+   - The file is written only when the list of hotspots changed. Hotspots also drop out once they are older than 24 hours, so the file changes over the day even without new detections.
+   - A FIRMS error never stops the road update; the script prints `!! fire signals skipped` and carries on.
+7. **Publish** (with `PUBLISH=1`):
    - The script commits `data/` if it differs from the last commit. Only `data/` is committed, never other local edits. The commit message summarises the change, for example `Update road data: 2 status, 2 updatedAt (source …)`.
    - If the clone is ahead of GitHub, it runs `pull --rebase --autostash` and then `push`.
    - If a push fails, for example because the network is down, the commit stays local and is pushed on the next run.
@@ -189,6 +202,7 @@ Each run goes through six steps:
 !! Some-Road: unknown status 'foo' - add it to STATUS_COLORS
 changed: 1 new, 2 status, 3 updatedAt -> GeoJSON written
 alert log: 2 new activations, 1 new status changes, 412/97 total -> alerts.json written
+fire signals: 4 within 3 km of a road in the last 24 h -> fires.geojson written
 done: 37 segments (2 routed), source updatedAt 2026-11-17T22:49:13.612Z, statuses {...}
 publish: committed 'Update road data: 1 new, 2 status, 3 updatedAt (source ...)'
 publish: pushed
@@ -262,6 +276,27 @@ The published files are at `https://raw.githubusercontent.com/<you>/road-alerts-
 
 The log begins with the first run of this version. It is seeded with whatever is still in the feed's window at that point, about three days.
 
+### `data/fires.geojson`
+
+```json
+{"type":"FeatureCollection","maxKm":3.0,"hours":24,"updatedAt":"2026-11-20T11:20:04Z","features":[
+ {"type":"Feature","properties":{"id":"0606a4e354de","t":"2026-11-19T23:20:00Z","sat":"NOAA-21 (VIIRS)",
+  "conf":"nominal","frp":0.96,"day":false,"road":"Debalcevo-Lugansk","km":1.4},
+  "geometry":{"type":"Point","coordinates":[38.76197,48.46642]}}
+]}
+```
+
+- One Point per hotspot, oldest first.
+- `t` is the satellite overpass time in UTC.
+- `sat` is the satellite and instrument.
+- `conf` is the FIRMS confidence: `low`, `nominal` or `high`. MODIS gives a percentage, which becomes `low` below 30 and `high` from 80.
+- `frp` is the fire radiative power in MW.
+- `day` is `true` for a daytime overpass.
+- `road` and `km` are the nearest road segment and the distance to it.
+- `maxKm` and `hours` are the settings used; `updatedAt` is when the list last changed.
+
+A hotspot means the satellite saw a pixel hotter than its surroundings: a fire, an explosion or strike, a gas flare or a hot industrial site. VIIRS pixels are about 375 m wide and MODIS pixels about 1 km. The satellites pass over a few times a day, mostly around 01:00–03:00 and 10:00–14:00 UTC, so FIRMS shows when a satellite saw the heat, not when it started. Clouds hide fires.
+
 ### Status colours
 
 Colours are set in `STATUS_COLORS` at the top of `build_geojson.py`:
@@ -310,4 +345,5 @@ To find the right coordinates, open [openstreetmap.org](https://www.openstreetma
 - **The routing ignores the current situation.** It doesn't know about front lines, checkpoints, closures or destroyed bridges. It takes the shortest road in OpenStreetMap, which may not be the road actually in use. Use `via` or `geometry` overrides where that matters.
 - **Endpoints are town centres**, snapped by the router to the nearest road.
 - **Removed segments** drop out of the output but stay in `cache/routes.json`. If a segment comes back, its old route is reused.
+- **Fire signals** are only as fresh as the last satellite pass, and the route lines can be a few hundred metres off the real road. That's why the default distance is 3 km rather than the pixel size.
 - **Public services.** The script uses the public Nominatim and OSRM servers at about 1 request per second. For heavy use, point `OSRM` and `NOMINATIM` in the script at your own servers.

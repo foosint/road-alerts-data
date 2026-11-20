@@ -262,5 +262,7 @@
 {"road":"Genichesk-Chongar","status":"neutral","from":"busy","at":"2026-11-20T06:48:46.319Z"},
 {"road":"Novotroickoe-Genichesk","status":"neutral","from":"busy","at":"2026-11-20T06:48:46.319Z"},
 {"road":"Mariupl-Novoazovsk","status":"busy","from":"neutral","at":"2026-11-20T07:01:18.834Z"},
-{"road":"Novoazovsk-Veselovoznesenka","status":"busy","from":"neutral","at":"2026-11-20T07:01:18.834Z"}
+{"road":"Novoazovsk-Veselovoznesenka","status":"busy","from":"neutral","at":"2026-11-20T07:01:18.834Z"},
+{"road":"Mariupl-Novoazovsk","status":"neutral","from":"busy","at":"2026-11-20T07:16:18.161Z"},
+{"road":"Novoazovsk-Veselovoznesenka","status":"neutral","from":"busy","at":"2026-11-20T07:16:18.161Z"}
 ]}

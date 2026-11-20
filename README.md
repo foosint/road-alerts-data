@@ -11,11 +11,13 @@ It also keeps a permanent log of every alert activation and every status change 
 
 It also writes `data/fires.geojson`: the [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov/) satellite heat signals (hotspots) of the last 24 hours that lie within 3 km of a road segment.
 
+And it writes `data/bridges.geojson`: every bridge and river crossing on the road segments, from OpenStreetMap. It is rebuilt automatically when a road is new or its route changes.
+
 It is meant to run as a cron job on a Raspberry Pi. When something has changed, it commits `data/` and pushes this repo.
 
 ```
 cron (Pi) ── build_geojson.py ──► data/roads.geojson, data/cities.geojson, data/alerts.json,
-                                   data/fires.geojson
+                                   data/fires.geojson, data/bridges.geojson
                                        │ only if something changed
                                        ▼
                          git commit data/ + push (this repo)
@@ -131,6 +133,9 @@ Don't run with `PUBLISH=1` on a second machine. Both machines would then commit 
 | `data/cities.geojson` | yes | script | **Published:** one Point per town. |
 | `data/alerts.json` | yes | script | **Published:** permanent log of alert activations. It only grows, and it is the only lasting record of past alerts. See [`data/alerts.json`](#dataalertsjson). |
 | `data/fires.geojson` | yes | script | **Published:** FIRMS fire signals near the roads, last 24 hours. Rebuilt on every run. See [`data/fires.geojson`](#datafiresgeojson). |
+| `data/bridges.geojson` | yes | script | **Published:** bridges and river crossings on the routes. Rebuilt only when a route changes. See [`data/bridges.geojson`](#databridgesgeojson). |
+| `osm/` | yes | `extract_bridges.py --import-osm` | Compact copy of the OpenStreetMap bridges (0.2 MB) and named rivers and canals (2.5 MB, simplified to 10 m) for the whole region, gzipped. Copied once from the telegram-events project; see [Bridges and river crossings](#bridges-and-river-crossings). |
+| `extract_bridges.py` | yes | — | Finds the bridges and river crossings on the routes. `build_geojson.py` calls it; run it by hand only to import the OSM data or to force a rebuild. |
 | `overrides.json` | yes | **you** | Manual corrections to coordinates and routes. See [Manual corrections](#manual-corrections). |
 | `build_geojson.py` | yes | — | The script. |
 | `.env` | no | **you** | Local settings. See `.env.example`. |
@@ -187,7 +192,11 @@ Each run goes through six steps:
    - It keeps a hotspot if it is at most `FIRMS_MAX_KM` (default 3 km) from the nearest road segment and was detected in the last 24 hours. Each one is tagged with that road and its distance.
    - The file is written only when the list of hotspots changed. Hotspots also drop out once they are older than 24 hours, so the file changes over the day even without new detections.
    - A FIRMS error never stops the road update; the script prints `!! fire signals skipped` and carries on.
-7. **Publish** (with `PUBLISH=1`):
+7. **Bridges** in `data/bridges.geojson`:
+   - The file records a fingerprint of every route it was built from. If a road is new, removed or rerouted, the script rebuilds the whole file from the OSM copy in `osm/`. This takes about 10 seconds on a PC, longer on a Pi, and only happens after a route change.
+   - Without `osm/`, it prints `!! bridges.geojson is out of date and osm/ is missing` and carries on. An error never stops the road update either (`!! bridges skipped`).
+   - See [Bridges and river crossings](#bridges-and-river-crossings) for how they are found.
+8. **Publish** (with `PUBLISH=1`):
    - The script commits `data/` if it differs from the last commit. Only `data/` is committed, never other local edits. The commit message summarises the change, for example `Update road data: 2 status, 2 updatedAt (source …)`.
    - If the clone is ahead of GitHub, it runs `pull --rebase --autostash` and then `push`.
    - If a push fails, for example because the network is down, the commit stays local and is pushed on the next run.
@@ -203,6 +212,7 @@ Each run goes through six steps:
 changed: 1 new, 2 status, 3 updatedAt -> GeoJSON written
 alert log: 2 new activations, 1 new status changes, 412/97 total -> alerts.json written
 fire signals: 4 within 3 km of a road in the last 24 h -> fires.geojson written
+bridges: rebuilt for Kalanchak-Chaplinka -> bridges.geojson written (123 features: 53 river bridges, 61 other bridges, 9 river crossings without a bridge, 0 destroyed)
 done: 37 segments (2 routed), source updatedAt 2026-11-17T22:49:13.612Z, statuses {...}
 publish: committed 'Update road data: 1 new, 2 status, 3 updatedAt (source ...)'
 publish: pushed
@@ -297,6 +307,33 @@ The log begins with the first run of this version. It is seeded with whatever is
 
 A hotspot means the satellite saw a pixel hotter than its surroundings: a fire, an explosion or strike, a gas flare or a hot industrial site. VIIRS pixels are about 375 m wide and MODIS pixels about 1 km. The satellites pass over a few times a day, mostly around 01:00–03:00 and 10:00–14:00 UTC, so FIRMS shows when a satellite saw the heat, not when it started. Clouds hide fires.
 
+### `data/bridges.geojson`
+
+```json
+{"type":"FeatureCollection","generatedAt":"2026-11-20T14:20:05Z","source":"OpenStreetMap (bridges fetched 2026-11-20)","routes":{"Berdyansk-Mariupl":"5f0c2d9a1e", ...},"features":[
+{"type":"Feature","properties":{"id":"10a31c8be2","kind":"river","roads":["Berdyansk-Mariupl"],"ref":"М-14","river":"Берда","waterway":"river","length_m":92,"osm":[462516850]},"geometry":{"type":"Point","coordinates":[36.830835,46.938577]}},
+{"type":"Feature","properties":{"id":"c56c84fd4d","kind":"crossing","roads":["Doneck-Telmanovo"],"river":"Кальмиус","waterway":"river","osm_river":742631071},"geometry":{"type":"Point","coordinates":[37.855142,47.920099]}}
+]}
+```
+
+- One Point per bridge or crossing, on the route, one per line.
+- `kind`:
+  - `river` is a bridge over a named river or canal;
+  - `other` is any other bridge, such as an overpass or a viaduct over a road, a railway or a ravine;
+  - `crossing` is a place where the route crosses a river or canal but OSM has no bridge: a culvert, a dam, a ford or an unmapped bridge.
+- `roads` lists every road whose route passes the point. Roads that share a stretch share the feature.
+- Optional properties:
+  - `name`: the bridge's own name;
+  - `street`: the street or road the bridge carries;
+  - `ref`: the road number;
+  - `river` and `waterway`: the water crossed;
+  - `structure`: `viaduct` etc., when OSM tags it;
+  - `length_m`: the bridge's length along the route;
+  - `destroyed`: `true` when OSM tags it as destroyed or ruins;
+  - `osm`: the bridge's OSM way ids;
+  - `osm_river`: the river's OSM way id, for crossings.
+- `routes` holds the route fingerprints the file was built from (see step 7).
+
 ### Status colours
 
 Colours are set in `STATUS_COLORS` at the top of `build_geojson.py`:
@@ -308,6 +345,29 @@ Colours are set in `STATUS_COLORS` at the top of `build_geojson.py`:
 | anything else | `#ae3ec9` purple, with a warning in the console |
 
 The feed uses only `neutral` and `busy`. If a new status appears, add it here. A colour change counts as a change, so it gets published.
+
+## Bridges and river crossings
+
+The OSM data comes from the telegram-events project, which downloads it from Overpass. A compact copy lives in `osm/` and is committed, so the Pi needs nothing else. It was copied once and won't change unless you copy it again:
+
+```sh
+uv run extract_bridges.py --import-osm                       # from ../../telegram-events/data/osm
+uv run extract_bridges.py --import-osm /path/to/data/osm     # from elsewhere
+```
+
+This writes `osm/bridges.json.gz`, `osm/rivers.json.gz` and `osm/meta.json` (download dates), and rebuilds `data/bridges.geojson`. Commit `osm/`. To force a rebuild without importing, run `uv run extract_bridges.py`.
+
+How a route's bridges are found:
+
+1. **Bridges on the route:** an OSM bridge way (motorway to tertiary) counts if every point of it is within 25 m of the route, and it runs in the same direction as the route. A road crossing over or under ours is therefore not a bridge of ours.
+2. **One bridge, several ways:** OSM often maps a bridge as two ways (one per carriageway) or splits it. Ways that overlap or lie within 30 m of each other along the route become one bridge.
+3. **Rivers:** wherever the route crosses a named river or canal, the river is assigned to the bridge within 150 m. If there is none, it becomes a `crossing`. A river mapped with both a Russian and a Ukrainian name ("Кальмиус" / "Кальміус") counts once.
+4. **Shared stretches:** points of different roads within 30 m of each other are merged.
+
+Limits:
+- Only what OSM has, as of the download date in `osm/meta.json`. Destroyed or rebuilt bridges are only marked if someone tagged them in OSM.
+- Small bridges on minor streets that a route passes through are included only if they are on motorway to tertiary roads.
+- The rivers in `osm/` are named rivers and canals only, so unnamed streams and ditches don't count as crossings.
 
 ## Manual corrections
 

@@ -1,0 +1,13 @@
+{
+ "source": "OpenStreetMap via Overpass, copied from telegram-events/data/osm",
+ "importedAt": "2026-11-20T14:04:26Z",
+ "bridges": {
+  "fetched_at": "2026-11-20T11:06:25.835681+00:00",
+  "ways": 6626
+ },
+ "rivers": {
+  "fetched_at": "2026-11-20T10:56:35.154799+00:00",
+  "ways": 12934,
+  "simplified_m": 10
+ }
+}

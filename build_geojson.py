@@ -14,7 +14,10 @@ Each run:
   6. fire signals: downloads the NASA FIRMS 24h hotspot files (at most every
      FIRMS_EVERY_MIN minutes) and writes data/fires.geojson with the hotspots of the
      last 24 hours within FIRMS_MAX_KM of a road segment
-  7. if PUBLISH=1: commits data/ in this repo and pushes it (only when something
+  7. bridges: if a road is new, removed or rerouted, rebuilds data/bridges.geojson (the
+     bridges and river crossings on each route) from the OSM copy in osm/
+     (see extract_bridges.py)
+  8. if PUBLISH=1: commits data/ in this repo and pushes it (only when something
      changed); the road-alerts site reads the files from this repo
 
 Settings come from environment variables or a .env file next to this script
@@ -51,6 +54,7 @@ OUT_ROADS = DATA_DIR / "roads.geojson"
 OUT_CITIES = DATA_DIR / "cities.geojson"
 OUT_ALERTS = DATA_DIR / "alerts.json"  # permanent log of alert activations
 OUT_FIRES = DATA_DIR / "fires.geojson"  # FIRMS hotspots near the roads, last 24 h
+OUT_BRIDGES = DATA_DIR / "bridges.geojson"  # made by hand with extract_bridges.py, never by this script
 FIRMS_CACHE = HERE / "cache" / "firms.json"
 
 # NASA FIRMS near-real-time 24h files, no API key needed. The Russia_Asia region starts
@@ -392,6 +396,35 @@ def road_lines(feature):
     return g["coordinates"] if g["type"] == "MultiLineString" else [g["coordinates"]]
 
 
+def route_hash(feature):
+    """Short fingerprint of a road's route geometry (extract_bridges.py records it per road)."""
+    raw = json.dumps(feature["geometry"]["coordinates"], separators=(",", ":"))
+    return hashlib.sha1(raw.encode()).hexdigest()[:10]
+
+
+def update_bridges(features):
+    """Rebuild data/bridges.geojson when a road is new, removed or rerouted since it was built.
+
+    Uses the OSM copy in osm/ (see extract_bridges.py). Returns a change label, or None.
+    """
+    import extract_bridges  # imports this module; loaded only when needed
+
+    current = {f["properties"]["id"]: route_hash(f) for f in features}
+    built = (load_json(OUT_BRIDGES, None) or {}).get("routes")
+    if built == current:
+        return None
+    if not extract_bridges.osm_available():
+        print("!! bridges.geojson is out of date and osm/ is missing - run extract_bridges.py --import-osm once")
+        return None
+    why = [rid for rid in current if (built or {}).get(rid) != current[rid]]
+    gone = [rid for rid in built or {} if rid not in current]
+    result = extract_bridges.build_bridges(features)
+    extract_bridges.write_bridges(result)
+    print(f"bridges: {'built' if built is None else 'rebuilt for ' + ', '.join(why + gone)} "
+          f"-> bridges.geojson written ({extract_bridges.summary(result)})")
+    return "bridges"
+
+
 def firms_confidence(v):
     """VIIRS gives low/nominal/high (or l/n/h), MODIS a percentage; all become low/nominal/high."""
     v = (v or "").strip().lower()
@@ -635,6 +668,11 @@ def main():
         print(f"changed: {', '.join(changes)} -> GeoJSON written")
     else:
         print("no changes - GeoJSON left untouched")
+    try:
+        if label := update_bridges(features):
+            changes.append(label)
+    except Exception as e:  # bridges are extra: never let them break the road update
+        print(f"!! bridges skipped: {e}")
 
     old_alerts = load_json(OUT_ALERTS, {})
     old_status = {f["properties"]["id"]: f["properties"].get("status")

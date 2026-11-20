@@ -251,5 +251,6 @@
 {"road":"Doneck-Harcisk","status":"busy","from":"neutral","at":"2026-11-19T20:46:42.693Z"},
 {"road":"Doneck-Harcisk","status":"clear","from":"busy","at":"2026-11-19T22:10:18.167Z"},
 {"road":"Doneck-Harcisk","status":"neutral","from":"clear","at":"2026-11-19T22:26:00.472Z"},
-{"road":"Berdyansk-Mariupl","status":"busy","from":"neutral","at":"2026-11-20T05:04:12.258Z"}
+{"road":"Berdyansk-Mariupl","status":"busy","from":"neutral","at":"2026-11-20T05:04:12.258Z"},
+{"road":"Berdyansk-Mariupl","status":"neutral","from":"busy","at":"2026-11-20T05:24:30.913Z"}
 ]}

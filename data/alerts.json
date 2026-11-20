@@ -291,5 +291,7 @@
 {"road":"Debalcevo-Lugansk","status":"clear","from":"busy","at":"2026-11-20T10:50:11.517Z"},
 {"road":"Debalcevo-Lugansk","status":"neutral","from":"clear","at":"2026-11-20T11:06:01.024Z"},
 {"road":"Mariupl-Novoazovsk","status":"busy","from":"neutral","at":"2026-11-20T15:00:22.236Z"},
-{"road":"Novoazovsk-Veselovoznesenka","status":"busy","from":"neutral","at":"2026-11-20T15:00:22.236Z"}
+{"road":"Novoazovsk-Veselovoznesenka","status":"busy","from":"neutral","at":"2026-11-20T15:00:22.236Z"},
+{"road":"Mariupl-Novoazovsk","status":"neutral","from":"busy","at":"2026-11-20T15:15:22.450Z"},
+{"road":"Novoazovsk-Veselovoznesenka","status":"neutral","from":"busy","at":"2026-11-20T15:15:22.450Z"}
 ]}

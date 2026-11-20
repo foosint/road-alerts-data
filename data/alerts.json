@@ -256,5 +256,8 @@
 {"road":"Berdyansk-Mariupl","status":"neutral","from":"busy","at":"2026-11-20T05:24:30.913Z"},
 {"road":"Chongar-Gjankoi","status":"busy","from":"neutral","at":"2026-11-20T06:33:46.012Z"},
 {"road":"Genichesk-Chongar","status":"busy","from":"neutral","at":"2026-11-20T06:33:46.012Z"},
-{"road":"Novotroickoe-Genichesk","status":"busy","from":"neutral","at":"2026-11-20T06:33:46.012Z"}
+{"road":"Novotroickoe-Genichesk","status":"busy","from":"neutral","at":"2026-11-20T06:33:46.012Z"},
+{"road":"Chongar-Gjankoi","status":"neutral","from":"busy","at":"2026-11-20T06:48:46.319Z"},
+{"road":"Genichesk-Chongar","status":"neutral","from":"busy","at":"2026-11-20T06:48:46.319Z"},
+{"road":"Novotroickoe-Genichesk","status":"neutral","from":"busy","at":"2026-11-20T06:48:46.319Z"}
 ]}

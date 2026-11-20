@@ -188,7 +188,9 @@
 {"id":"AAi0klPS4AGkcOq88Pjs0O329TPbGvB2","intent":"threat","at":"2026-11-20T09:50:01.113752Z","roads":["Debalcevo-Lugansk"]},
 {"id":"1XqLMduOgBD5A_qP7fVF3lMw-K7soXBJ","intent":"clear","at":"2026-11-20T10:50:10.747411Z","roads":["Debalcevo-Lugansk"]},
 {"id":"qk-40uW-8uyZuAKfB7NAb7ftke4rte8k","intent":"threat","at":"2026-11-20T15:00:21.473190Z","roads":["Mariupl-Novoazovsk","Novoazovsk-Veselovoznesenka"]},
-{"id":"72gJENPxdyAnfRoveifBk9adlxb64cCG","intent":"threat","at":"2026-11-20T15:50:31.362809Z","roads":["Doneck-Panteleimonovka","Panteleimonovka-Gorlovka"]}
+{"id":"72gJENPxdyAnfRoveifBk9adlxb64cCG","intent":"threat","at":"2026-11-20T15:50:31.362809Z","roads":["Doneck-Panteleimonovka","Panteleimonovka-Gorlovka"]},
+{"id":"d8fFdTtFhTmMlfbY1zZzGqa_Z-0nCcg7","intent":"threat","at":"2026-11-20T17:46:18.842608Z","roads":["Mariupl-Volnovaha"]},
+{"id":"oWDAKPj-EkA1XJ4JgDWUGVJBIK5D0sBl","intent":"threat","at":"2026-11-20T17:47:24.544365Z","roads":["Berdyansk-Mariupl"]}
 ],"changes":[
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
@@ -296,5 +298,9 @@
 {"road":"Mariupl-Novoazovsk","status":"neutral","from":"busy","at":"2026-11-20T15:15:22.450Z"},
 {"road":"Novoazovsk-Veselovoznesenka","status":"neutral","from":"busy","at":"2026-11-20T15:15:22.450Z"},
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-20T15:50:31.754Z"},
-{"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-20T15:50:31.754Z"}
+{"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-20T15:50:31.754Z"},
+{"road":"Mariupl-Volnovaha","status":"busy","from":"neutral","at":"2026-11-20T17:46:19.208Z"},
+{"road":"Doneck-Panteleimonovka","status":"neutral","from":"busy","at":"2026-11-20T17:46:50.278Z"},
+{"road":"Panteleimonovka-Gorlovka","status":"neutral","from":"busy","at":"2026-11-20T17:46:50.278Z"},
+{"road":"Berdyansk-Mariupl","status":"busy","from":"neutral","at":"2026-11-20T17:47:25.200Z"}
 ]}

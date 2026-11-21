@@ -244,7 +244,12 @@
 {"id":"lLPqHQTVqpXFMb54IB9IXzQnT3DwmI_Q","intent":"threat","at":"2026-11-21T07:36:12.002624Z","roads":["Doneck-Harcisk"]},
 {"id":"Y5evcFGt5uEg9Og8IB2iA5RRRtdSRkro","intent":"threat","at":"2026-11-21T07:36:39.036165Z","roads":["Harcisk-Shahtersk"]},
 {"id":"p5m4j8fTgncYul9stH6AxYvP47h9kQE2","intent":"threat","at":"2026-11-21T07:37:09.998902Z","roads":["Doneck-Panteleimonovka","Panteleimonovka-Gorlovka"]},
-{"id":"xL3FXSdtisJoJSvGfRKchPtmc10XV56_","intent":"threat","at":"2026-11-21T07:50:34.414791Z","roads":["Inzovka-Berdyansk"]}
+{"id":"xL3FXSdtisJoJSvGfRKchPtmc10XV56_","intent":"threat","at":"2026-11-21T07:50:34.414791Z","roads":["Inzovka-Berdyansk"]},
+{"id":"Q_HCvSVH9U9arkQp1zl-zXwmWa2lzDW2","intent":"threat","at":"2026-11-21T08:17:23.143229Z","roads":["Doneck-Telmanovo"]},
+{"id":"e2-dMT3l-evrPygwR3Vm9r6IoN3ytLeJ","intent":"threat","at":"2026-11-21T08:17:25.932402Z","roads":["Telmanovo-Novoazovsk"]},
+{"id":"4iFPCKWqg8n9J0d93sB6EEet5ERbmqqw","intent":"threat","at":"2026-11-21T08:17:31.163363Z","roads":["Mariupl-Novoazovsk","Novoazovsk-Veselovoznesenka"]},
+{"id":"2QBglJBrrQ9HzL7pbrlF-rxUHW1ASIXo","intent":"threat","at":"2026-11-21T08:17:33.874134Z","roads":["Mariupl-Volnovaha"]},
+{"id":"KlsKpBqgr2tie0PIJVPH45E4UIBqZ83o","intent":"threat","at":"2026-11-21T08:17:41.205302Z","roads":["Volnovaha-Doneck"]}
 ],"changes":[
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
@@ -443,5 +448,11 @@
 {"road":"Inzovka-Berdyansk","status":"busy","from":"neutral","at":"2026-11-21T07:50:34.829Z"},
 {"road":"Doneck-Panteleimonovka","status":"neutral","from":"busy","at":"2026-11-21T07:52:10.872Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"neutral","from":"busy","at":"2026-11-21T07:52:10.872Z"},
-{"road":"Inzovka-Berdyansk","status":"neutral","from":"busy","at":"2026-11-21T08:05:35.237Z"}
+{"road":"Inzovka-Berdyansk","status":"neutral","from":"busy","at":"2026-11-21T08:05:35.237Z"},
+{"road":"Doneck-Telmanovo","status":"busy","from":"neutral","at":"2026-11-21T08:17:23.680Z"},
+{"road":"Telmanovo-Novoazovsk","status":"busy","from":"neutral","at":"2026-11-21T08:17:26.776Z"},
+{"road":"Mariupl-Novoazovsk","status":"busy","from":"neutral","at":"2026-11-21T08:17:31.817Z"},
+{"road":"Novoazovsk-Veselovoznesenka","status":"busy","from":"neutral","at":"2026-11-21T08:17:31.817Z"},
+{"road":"Mariupl-Volnovaha","status":"busy","from":"neutral","at":"2026-11-21T08:17:34.729Z"},
+{"road":"Volnovaha-Doneck","status":"busy","from":"neutral","at":"2026-11-21T08:17:41.799Z"}
 ]}

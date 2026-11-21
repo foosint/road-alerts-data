@@ -456,5 +456,6 @@
 {"road":"Novoazovsk-Veselovoznesenka","status":"busy","from":"neutral","at":"2026-11-21T08:17:31.817Z"},
 {"road":"Mariupl-Volnovaha","status":"busy","from":"neutral","at":"2026-11-21T08:17:34.729Z"},
 {"road":"Volnovaha-Doneck","status":"busy","from":"neutral","at":"2026-11-21T08:17:41.799Z"},
-{"road":"Inzovka-Berdyansk","status":"busy","from":"neutral","at":"2026-11-21T08:24:49.906Z"}
+{"road":"Inzovka-Berdyansk","status":"busy","from":"neutral","at":"2026-11-21T08:24:49.906Z"},
+{"road":"Volnovaha-Doneck","status":"neutral","from":"busy","at":"2026-11-21T08:32:42.053Z"}
 ]}

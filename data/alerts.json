@@ -544,5 +544,9 @@
 {"road":"Enakievo-Shahtersk","status":"neutral","from":"busy","at":"2026-11-21T21:49:07.590Z"},
 {"road":"Doneck-Harcisk","status":"neutral","from":"busy","at":"2026-11-21T22:06:00.142Z"},
 {"road":"Harcisk-Shahtersk","status":"neutral","from":"busy","at":"2026-11-21T22:26:00.756Z"},
-{"road":"Debalcevo-Lugansk","status":"neutral","from":"busy","at":"2026-11-21T22:28:50.906Z"}
+{"road":"Debalcevo-Lugansk","status":"neutral","from":"busy","at":"2026-11-21T22:28:50.906Z"},
+{"road":"Shahtersk-Torez","status":"neutral","from":"busy","at":"2026-11-21T22:46:00.352Z"},
+{"road":"Torez-KrasniyLuch","status":"neutral","from":"busy","at":"2026-11-21T22:46:00.352Z"},
+{"road":"Torez-Kuibyshevo","status":"neutral","from":"busy","at":"2026-11-21T22:46:00.352Z"},
+{"road":"Torez-Mius","status":"neutral","from":"busy","at":"2026-11-21T22:46:00.352Z"}
 ]}

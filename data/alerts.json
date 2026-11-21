@@ -236,7 +236,10 @@
 {"id":"fosU9_VGkbTGzKrZieH9PpiQj1Bu_Fat","intent":"threat","at":"2026-11-21T07:15:40.558377Z","roads":["Melitopl-Inzovka"]},
 {"id":"fqCm3Nr0UsUK2bhDplgTgClcf_WkOAIj","intent":"clear","at":"2026-11-21T07:20:09.182238Z","roads":["Gorlovka-Debalcevo"]},
 {"id":"6axV0eEmTyS2YuGBUOb5Zhdfv-ZgTE6F","intent":"clear","at":"2026-11-21T07:20:26.745868Z","roads":["Enakievo-Shahtersk"]},
-{"id":"S9Mg-Sop18Sz82wMulTl_WG-KqBXNq2t","intent":"clear","at":"2026-11-21T07:20:45.022442Z","roads":["Doneck-Panteleimonovka","Panteleimonovka-Gorlovka"]}
+{"id":"S9Mg-Sop18Sz82wMulTl_WG-KqBXNq2t","intent":"clear","at":"2026-11-21T07:20:45.022442Z","roads":["Doneck-Panteleimonovka","Panteleimonovka-Gorlovka"]},
+{"id":"W2F7vfq6Q17NmAIIg3JqzmufTQWGxUhb","intent":"clear","at":"2026-11-21T07:25:29.326679Z","roads":["Harcisk-Shahtersk"]},
+{"id":"0peaDyNGLmgVoYK7AalhuYSLpOlO46cJ","intent":"clear","at":"2026-11-21T07:26:00.090595Z","roads":["Doneck-Harcisk"]},
+{"id":"PDx9WGRiNx5vconLPXIXhQNcNAx_JSyW","intent":"threat","at":"2026-11-21T07:29:42.366341Z","roads":["Inzovka-Berdyansk"]}
 ],"changes":[
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
@@ -420,5 +423,8 @@
 {"road":"Gorlovka-Debalcevo","status":"clear","from":"busy","at":"2026-11-21T07:20:09.882Z"},
 {"road":"Enakievo-Shahtersk","status":"clear","from":"busy","at":"2026-11-21T07:20:26.875Z"},
 {"road":"Doneck-Panteleimonovka","status":"clear","from":"busy","at":"2026-11-21T07:20:46.080Z"},
-{"road":"Panteleimonovka-Gorlovka","status":"clear","from":"busy","at":"2026-11-21T07:20:46.080Z"}
+{"road":"Panteleimonovka-Gorlovka","status":"clear","from":"busy","at":"2026-11-21T07:20:46.080Z"},
+{"road":"Harcisk-Shahtersk","status":"clear","from":"busy","at":"2026-11-21T07:25:30.083Z"},
+{"road":"Artemovsk-Debalcevo","status":"neutral","from":"clear","at":"2026-11-21T07:26:00.119Z"},
+{"road":"Doneck-Harcisk","status":"clear","from":"busy","at":"2026-11-21T07:26:01.097Z"}
 ]}

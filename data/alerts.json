@@ -482,5 +482,11 @@
 {"road":"Debalcevo-Lugansk","status":"clear","from":"busy","at":"2026-11-21T10:37:39.827Z"},
 {"road":"Debalcevo-Lugansk","status":"neutral","from":"clear","at":"2026-11-21T10:54:08.250Z"},
 {"road":"Doneck-Panteleimonovka","status":"clear","from":"busy","at":"2026-11-21T11:54:20.117Z"},
-{"road":"Panteleimonovka-Gorlovka","status":"clear","from":"busy","at":"2026-11-21T11:54:20.117Z"}
+{"road":"Panteleimonovka-Gorlovka","status":"clear","from":"busy","at":"2026-11-21T11:54:20.117Z"},
+{"road":"Doneck-Panteleimonovka","status":"neutral","from":"clear","at":"2026-11-21T12:06:00.388Z"},
+{"road":"Doneck-Telmanovo","status":"neutral","from":"busy","at":"2026-11-21T12:06:00.388Z"},
+{"road":"Mariupl-Novoazovsk","status":"neutral","from":"busy","at":"2026-11-21T12:06:00.388Z"},
+{"road":"Novoazovsk-Veselovoznesenka","status":"neutral","from":"busy","at":"2026-11-21T12:06:00.388Z"},
+{"road":"Panteleimonovka-Gorlovka","status":"neutral","from":"clear","at":"2026-11-21T12:06:00.388Z"},
+{"road":"Telmanovo-Novoazovsk","status":"neutral","from":"busy","at":"2026-11-21T12:06:00.388Z"}
 ]}

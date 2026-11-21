@@ -492,5 +492,8 @@
 {"road":"Telmanovo-Novoazovsk","status":"neutral","from":"busy","at":"2026-11-21T12:06:00.388Z"},
 {"road":"Mariupl-Volnovaha","status":"neutral","from":"busy","at":"2026-11-21T12:11:00.547Z"},
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-21T12:22:01.985Z"},
-{"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-21T12:22:01.985Z"}
+{"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-21T12:22:01.985Z"},
+{"road":"Doneck-Harcisk","status":"neutral","from":"busy","at":"2026-11-21T12:46:00.607Z"},
+{"road":"Harcisk-Shahtersk","status":"neutral","from":"busy","at":"2026-11-21T12:46:00.607Z"},
+{"road":"Shahtersk-Torez","status":"neutral","from":"busy","at":"2026-11-21T12:46:00.607Z"}
 ]}

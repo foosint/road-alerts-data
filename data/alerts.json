@@ -462,5 +462,7 @@
 {"road":"Volnovaha-Doneck","status":"neutral","from":"busy","at":"2026-11-21T08:32:42.053Z"},
 {"road":"Harcisk-Shahtersk","status":"clear","from":"busy","at":"2026-11-21T08:36:20.160Z"},
 {"road":"Doneck-Harcisk","status":"clear","from":"busy","at":"2026-11-21T08:36:57.172Z"},
-{"road":"Inzovka-Berdyansk","status":"neutral","from":"busy","at":"2026-11-21T08:39:50.220Z"}
+{"road":"Inzovka-Berdyansk","status":"neutral","from":"busy","at":"2026-11-21T08:39:50.220Z"},
+{"road":"Harcisk-Shahtersk","status":"neutral","from":"clear","at":"2026-11-21T08:51:19.533Z"},
+{"road":"Doneck-Harcisk","status":"neutral","from":"clear","at":"2026-11-21T08:51:56.556Z"}
 ]}

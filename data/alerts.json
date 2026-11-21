@@ -511,5 +511,6 @@
 {"road":"Debalcevo-Lugansk","status":"busy","from":"neutral","at":"2026-11-21T16:40:59.398Z"},
 {"road":"Gorlovka-Debalcevo","status":"busy","from":"neutral","at":"2026-11-21T16:59:10.046Z"},
 {"road":"Harcisk-Shahtersk","status":"clear","from":"busy","at":"2026-11-21T17:02:24.140Z"},
-{"road":"Debalcevo-Lugansk","status":"neutral","from":"busy","at":"2026-11-21T17:24:21.797Z"}
+{"road":"Debalcevo-Lugansk","status":"neutral","from":"busy","at":"2026-11-21T17:24:21.797Z"},
+{"road":"Harcisk-Shahtersk","status":"neutral","from":"clear","at":"2026-11-21T17:26:00.835Z"}
 ]}

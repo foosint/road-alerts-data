@@ -403,5 +403,7 @@
 {"road":"Enakievo-Shahtersk","status":"busy","from":"neutral","at":"2026-11-21T06:20:57.240Z"},
 {"road":"Inzovka-Berdyansk","status":"busy","from":"neutral","at":"2026-11-21T06:23:04.159Z"},
 {"road":"Melitopl-Inzovka","status":"busy","from":"neutral","at":"2026-11-21T06:23:31.256Z"},
-{"road":"Harcisk-Shahtersk","status":"busy","from":"neutral","at":"2026-11-21T06:25:39.381Z"}
+{"road":"Harcisk-Shahtersk","status":"busy","from":"neutral","at":"2026-11-21T06:25:39.381Z"},
+{"road":"Inzovka-Berdyansk","status":"neutral","from":"busy","at":"2026-11-21T06:38:04.542Z"},
+{"road":"Melitopl-Inzovka","status":"neutral","from":"busy","at":"2026-11-21T06:38:31.562Z"}
 ]}

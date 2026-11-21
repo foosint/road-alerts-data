@@ -192,7 +192,13 @@
 {"id":"d8fFdTtFhTmMlfbY1zZzGqa_Z-0nCcg7","intent":"threat","at":"2026-11-20T17:46:18.842608Z","roads":["Mariupl-Volnovaha"]},
 {"id":"oWDAKPj-EkA1XJ4JgDWUGVJBIK5D0sBl","intent":"threat","at":"2026-11-20T17:47:24.544365Z","roads":["Berdyansk-Mariupl"]},
 {"id":"isgWbkJXJdWoImkOyED6gabM1IyCK-w1","intent":"threat","at":"2026-11-20T19:28:36.374258Z","roads":["Doneck-Panteleimonovka","Panteleimonovka-Gorlovka"]},
-{"id":"nJErQg_2VvlhdXi_S0FpERG5tWp3st5l","intent":"threat","at":"2026-11-21T00:20:55.260118Z","roads":["Berdyansk-Mariupl"]}
+{"id":"nJErQg_2VvlhdXi_S0FpERG5tWp3st5l","intent":"threat","at":"2026-11-21T00:20:55.260118Z","roads":["Berdyansk-Mariupl"]},
+{"id":"EAS_hWsW7gfGoA9FERIgVEcYQ5BjbXy0","intent":"threat","at":"2026-11-21T03:08:12.665364Z","roads":["Doneck-Harcisk"]},
+{"id":"MVHJdRtMqKMaEzcXqiZwgKV8lusTmJs9","intent":"threat","at":"2026-11-21T03:08:16.246511Z","roads":["Harcisk-Shahtersk"]},
+{"id":"wjMOWSParjX8JxgPJeML7k5qG-BlYxR3","intent":"threat","at":"2026-11-21T03:08:22.244210Z","roads":["Shahtersk-Torez"]},
+{"id":"d5KxrBn9goPslk_7zEVvtm2YRaWq86W7","intent":"threat","at":"2026-11-21T03:08:26.002499Z","roads":["Torez-KrasniyLuch"]},
+{"id":"SY1CZnMS6UxDK3wJvxgsvNyskLHbQWpd","intent":"threat","at":"2026-11-21T03:08:29.473652Z","roads":["Torez-Kuibyshevo"]},
+{"id":"advooYV0RBKjII0ttKIY1ucjHd8aN2B-","intent":"threat","at":"2026-11-21T03:08:33.054522Z","roads":["Torez-Mius"]}
 ],"changes":[
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
@@ -311,5 +317,11 @@
 {"road":"Panteleimonovka-Gorlovka","status":"neutral","from":"busy","at":"2026-11-20T19:57:30.227Z"},
 {"road":"Berdyansk-Mariupl","status":"neutral","from":"busy","at":"2026-11-20T21:46:00.317Z"},
 {"road":"Mariupl-Volnovaha","status":"neutral","from":"busy","at":"2026-11-20T21:46:00.317Z"},
-{"road":"Berdyansk-Mariupl","status":"busy","from":"neutral","at":"2026-11-21T00:20:56.070Z"}
+{"road":"Berdyansk-Mariupl","status":"busy","from":"neutral","at":"2026-11-21T00:20:56.070Z"},
+{"road":"Doneck-Harcisk","status":"busy","from":"neutral","at":"2026-11-21T03:08:13.158Z"},
+{"road":"Harcisk-Shahtersk","status":"busy","from":"neutral","at":"2026-11-21T03:08:17.188Z"},
+{"road":"Shahtersk-Torez","status":"busy","from":"neutral","at":"2026-11-21T03:08:23.234Z"},
+{"road":"Torez-KrasniyLuch","status":"busy","from":"neutral","at":"2026-11-21T03:08:26.143Z"},
+{"road":"Torez-Kuibyshevo","status":"busy","from":"neutral","at":"2026-11-21T03:08:30.158Z"},
+{"road":"Torez-Mius","status":"busy","from":"neutral","at":"2026-11-21T03:08:33.325Z"}
 ]}

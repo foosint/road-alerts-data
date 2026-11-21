@@ -488,5 +488,6 @@
 {"road":"Mariupl-Novoazovsk","status":"neutral","from":"busy","at":"2026-11-21T12:06:00.388Z"},
 {"road":"Novoazovsk-Veselovoznesenka","status":"neutral","from":"busy","at":"2026-11-21T12:06:00.388Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"neutral","from":"clear","at":"2026-11-21T12:06:00.388Z"},
-{"road":"Telmanovo-Novoazovsk","status":"neutral","from":"busy","at":"2026-11-21T12:06:00.388Z"}
+{"road":"Telmanovo-Novoazovsk","status":"neutral","from":"busy","at":"2026-11-21T12:06:00.388Z"},
+{"road":"Mariupl-Volnovaha","status":"neutral","from":"busy","at":"2026-11-21T12:11:00.547Z"}
 ]}

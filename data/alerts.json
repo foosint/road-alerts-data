@@ -250,7 +250,9 @@
 {"id":"4iFPCKWqg8n9J0d93sB6EEet5ERbmqqw","intent":"threat","at":"2026-11-21T08:17:31.163363Z","roads":["Mariupl-Novoazovsk","Novoazovsk-Veselovoznesenka"]},
 {"id":"2QBglJBrrQ9HzL7pbrlF-rxUHW1ASIXo","intent":"threat","at":"2026-11-21T08:17:33.874134Z","roads":["Mariupl-Volnovaha"]},
 {"id":"KlsKpBqgr2tie0PIJVPH45E4UIBqZ83o","intent":"threat","at":"2026-11-21T08:17:41.205302Z","roads":["Volnovaha-Doneck"]},
-{"id":"PE_LZhYPpCBeERVgjSPQ7lB7B1mYDxko","intent":"threat","at":"2026-11-21T08:24:49.337720Z","roads":["Inzovka-Berdyansk"]}
+{"id":"PE_LZhYPpCBeERVgjSPQ7lB7B1mYDxko","intent":"threat","at":"2026-11-21T08:24:49.337720Z","roads":["Inzovka-Berdyansk"]},
+{"id":"CxsPx25ZtU6Q3PQ63xOSEzXqEKh_VUp2","intent":"clear","at":"2026-11-21T08:36:19.279928Z","roads":["Harcisk-Shahtersk"]},
+{"id":"lsoDD-MrRw-_c8aYRIFKb8VboPqlCvdL","intent":"clear","at":"2026-11-21T08:36:56.164247Z","roads":["Doneck-Harcisk"]}
 ],"changes":[
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
@@ -457,5 +459,8 @@
 {"road":"Mariupl-Volnovaha","status":"busy","from":"neutral","at":"2026-11-21T08:17:34.729Z"},
 {"road":"Volnovaha-Doneck","status":"busy","from":"neutral","at":"2026-11-21T08:17:41.799Z"},
 {"road":"Inzovka-Berdyansk","status":"busy","from":"neutral","at":"2026-11-21T08:24:49.906Z"},
-{"road":"Volnovaha-Doneck","status":"neutral","from":"busy","at":"2026-11-21T08:32:42.053Z"}
+{"road":"Volnovaha-Doneck","status":"neutral","from":"busy","at":"2026-11-21T08:32:42.053Z"},
+{"road":"Harcisk-Shahtersk","status":"clear","from":"busy","at":"2026-11-21T08:36:20.160Z"},
+{"road":"Doneck-Harcisk","status":"clear","from":"busy","at":"2026-11-21T08:36:57.172Z"},
+{"road":"Inzovka-Berdyansk","status":"neutral","from":"busy","at":"2026-11-21T08:39:50.220Z"}
 ]}

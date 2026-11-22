@@ -590,5 +590,7 @@
 {"road":"Debalcevo-Lugansk","status":"neutral","from":"clear","at":"2026-11-22T09:12:10.474Z"},
 {"road":"Doneck-Harcisk","status":"busy","from":"neutral","at":"2026-11-22T09:24:52.959Z"},
 {"road":"Enakievo-Shahtersk","status":"clear","from":"busy","at":"2026-11-22T09:31:29.126Z"},
-{"road":"Inzovka-Berdyansk","status":"busy","from":"neutral","at":"2026-11-22T09:42:12.331Z"}
+{"road":"Inzovka-Berdyansk","status":"busy","from":"neutral","at":"2026-11-22T09:42:12.331Z"},
+{"road":"Berdyansk-Mariupl","status":"neutral","from":"busy","at":"2026-11-22T09:46:00.467Z"},
+{"road":"Enakievo-Shahtersk","status":"neutral","from":"clear","at":"2026-11-22T09:46:00.467Z"}
 ]}

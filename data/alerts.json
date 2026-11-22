@@ -597,5 +597,6 @@
 {"road":"Enakievo-Shahtersk","status":"neutral","from":"clear","at":"2026-11-22T09:46:00.467Z"},
 {"road":"Inzovka-Berdyansk","status":"neutral","from":"busy","at":"2026-11-22T09:57:12.830Z"},
 {"road":"Doneck-Harcisk","status":"clear","from":"busy","at":"2026-11-22T10:20:14.483Z"},
-{"road":"Enakievo-Shahtersk","status":"busy","from":"neutral","at":"2026-11-22T10:21:01.534Z"}
+{"road":"Enakievo-Shahtersk","status":"busy","from":"neutral","at":"2026-11-22T10:21:01.534Z"},
+{"road":"Doneck-Harcisk","status":"neutral","from":"clear","at":"2026-11-22T10:35:13.947Z"}
 ]}

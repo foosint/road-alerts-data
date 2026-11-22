@@ -640,5 +640,6 @@
 {"road":"Gorlovka-Debalcevo","status":"neutral","from":"busy","at":"2026-11-22T16:28:45.101Z"},
 {"road":"Mariupl-Volnovaha","status":"clear","from":"neutral","at":"2026-11-22T16:39:16.367Z"},
 {"road":"Telmanovo-Novoazovsk","status":"busy","from":"neutral","at":"2026-11-22T16:46:39.596Z"},
-{"road":"Mariupl-Volnovaha","status":"neutral","from":"clear","at":"2026-11-22T16:54:16.807Z"}
+{"road":"Mariupl-Volnovaha","status":"neutral","from":"clear","at":"2026-11-22T16:54:16.807Z"},
+{"road":"Debalcevo-Lugansk","status":"neutral","from":"busy","at":"2026-11-22T17:06:00.180Z"}
 ]}

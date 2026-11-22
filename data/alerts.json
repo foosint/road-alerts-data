@@ -592,5 +592,6 @@
 {"road":"Enakievo-Shahtersk","status":"clear","from":"busy","at":"2026-11-22T09:31:29.126Z"},
 {"road":"Inzovka-Berdyansk","status":"busy","from":"neutral","at":"2026-11-22T09:42:12.331Z"},
 {"road":"Berdyansk-Mariupl","status":"neutral","from":"busy","at":"2026-11-22T09:46:00.467Z"},
-{"road":"Enakievo-Shahtersk","status":"neutral","from":"clear","at":"2026-11-22T09:46:00.467Z"}
+{"road":"Enakievo-Shahtersk","status":"neutral","from":"clear","at":"2026-11-22T09:46:00.467Z"},
+{"road":"Inzovka-Berdyansk","status":"neutral","from":"busy","at":"2026-11-22T09:57:12.830Z"}
 ]}

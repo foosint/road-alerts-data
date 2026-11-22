@@ -662,5 +662,15 @@
 {"road":"Artemovsk-Debalcevo","status":"busy","from":"neutral","at":"2026-11-22T18:22:47.448Z"},
 {"road":"Mariupl-Novoazovsk","status":"neutral","from":"busy","at":"2026-11-22T19:06:00.754Z"},
 {"road":"Novoazovsk-Veselovoznesenka","status":"neutral","from":"busy","at":"2026-11-22T19:06:00.754Z"},
-{"road":"Telmanovo-Novoazovsk","status":"neutral","from":"busy","at":"2026-11-22T20:46:00.742Z"}
+{"road":"Telmanovo-Novoazovsk","status":"neutral","from":"busy","at":"2026-11-22T20:46:00.742Z"},
+{"road":"Artemovsk-Debalcevo","status":"neutral","from":"busy","at":"2026-11-22T22:06:00.123Z"},
+{"road":"Doneck-Harcisk","status":"neutral","from":"busy","at":"2026-11-22T22:06:00.123Z"},
+{"road":"Doneck-Panteleimonovka","status":"neutral","from":"busy","at":"2026-11-22T22:06:00.123Z"},
+{"road":"Gorlovka-Debalcevo","status":"neutral","from":"busy","at":"2026-11-22T22:06:00.123Z"},
+{"road":"Harcisk-Shahtersk","status":"neutral","from":"busy","at":"2026-11-22T22:06:00.123Z"},
+{"road":"Panteleimonovka-Gorlovka","status":"neutral","from":"busy","at":"2026-11-22T22:06:00.123Z"},
+{"road":"Shahtersk-Torez","status":"neutral","from":"busy","at":"2026-11-22T22:06:00.123Z"},
+{"road":"Torez-KrasniyLuch","status":"neutral","from":"busy","at":"2026-11-22T22:06:00.123Z"},
+{"road":"Torez-Kuibyshevo","status":"neutral","from":"busy","at":"2026-11-22T22:06:00.123Z"},
+{"road":"Torez-Mius","status":"neutral","from":"busy","at":"2026-11-22T22:06:00.123Z"}
 ]}

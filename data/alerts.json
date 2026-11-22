@@ -606,5 +606,7 @@
 {"road":"Enakievo-Shahtersk","status":"neutral","from":"clear","at":"2026-11-22T11:06:00.812Z"},
 {"road":"Doneck-Panteleimonovka","status":"clear","from":"busy","at":"2026-11-22T11:06:10.817Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"clear","from":"busy","at":"2026-11-22T11:06:10.817Z"},
-{"road":"Doneck-Harcisk","status":"busy","from":"neutral","at":"2026-11-22T11:17:49.126Z"}
+{"road":"Doneck-Harcisk","status":"busy","from":"neutral","at":"2026-11-22T11:17:49.126Z"},
+{"road":"Doneck-Panteleimonovka","status":"neutral","from":"clear","at":"2026-11-22T11:26:00.324Z"},
+{"road":"Panteleimonovka-Gorlovka","status":"neutral","from":"clear","at":"2026-11-22T11:26:00.324Z"}
 ]}

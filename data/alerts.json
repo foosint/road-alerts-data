@@ -560,5 +560,7 @@
 {"road":"Torez-Kuibyshevo","status":"neutral","from":"busy","at":"2026-11-21T22:46:00.352Z"},
 {"road":"Torez-Mius","status":"neutral","from":"busy","at":"2026-11-21T22:46:00.352Z"},
 {"road":"Inzovka-Berdyansk","status":"busy","from":"neutral","at":"2026-11-22T03:54:24.005Z"},
-{"road":"Melitopl-Inzovka","status":"busy","from":"neutral","at":"2026-11-22T03:54:50.984Z"}
+{"road":"Melitopl-Inzovka","status":"busy","from":"neutral","at":"2026-11-22T03:54:50.984Z"},
+{"road":"Inzovka-Berdyansk","status":"neutral","from":"busy","at":"2026-11-22T04:30:09.073Z"},
+{"road":"Melitopl-Inzovka","status":"neutral","from":"busy","at":"2026-11-22T04:30:36.098Z"}
 ]}

@@ -801,5 +801,6 @@
 {"road":"Gorlovka-Debalcevo","status":"neutral","from":"clear","at":"2026-11-23T10:46:00.924Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"neutral","from":"clear","at":"2026-11-23T10:46:00.924Z"},
 {"road":"Berdyansk-Mariupl","status":"busy","from":"neutral","at":"2026-11-23T11:03:08.292Z"},
-{"road":"Debalcevo-Lugansk","status":"busy","from":"neutral","at":"2026-11-23T11:09:11.567Z"}
+{"road":"Debalcevo-Lugansk","status":"busy","from":"neutral","at":"2026-11-23T11:09:11.567Z"},
+{"road":"Berdyansk-Mariupl","status":"neutral","from":"busy","at":"2026-11-23T11:18:08.808Z"}
 ]}

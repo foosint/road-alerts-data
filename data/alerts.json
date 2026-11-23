@@ -816,5 +816,6 @@
 {"road":"Doneck-Harcisk","status":"busy","from":"neutral","at":"2026-11-23T12:42:19.183Z"},
 {"road":"Harcisk-Shahtersk","status":"busy","from":"neutral","at":"2026-11-23T12:42:46.304Z"},
 {"road":"Doneck-Harcisk","status":"clear","from":"busy","at":"2026-11-23T13:39:48.887Z"},
-{"road":"Harcisk-Shahtersk","status":"clear","from":"busy","at":"2026-11-23T13:40:18.869Z"}
+{"road":"Harcisk-Shahtersk","status":"clear","from":"busy","at":"2026-11-23T13:40:18.869Z"},
+{"road":"Doneck-Harcisk","status":"neutral","from":"clear","at":"2026-11-23T13:54:49.188Z"}
 ]}

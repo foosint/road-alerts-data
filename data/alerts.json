@@ -349,7 +349,10 @@
 {"id":"vJgS5glZWGn_16jovhqmCwt64wRuLh-W","intent":"threat","at":"2026-11-23T06:51:50.068059Z","roads":["Doneck-Panteleimonovka","Panteleimonovka-Gorlovka"]},
 {"id":"lKy1cuvbU0e_gZ1AqJPRLOAn_QfCaaPa","intent":"threat","at":"2026-11-23T06:51:54.894497Z","roads":["Gorlovka-Debalcevo"]},
 {"id":"gWu8IVZuHdN0WSa5p6Ch9LO5o0C1V8Vg","intent":"threat","at":"2026-11-23T07:24:10.992071Z","roads":["Inzovka-Berdyansk"]},
-{"id":"2f27T7D51coajZeD3UohcDxbNjFZdmzA","intent":"threat","at":"2026-11-23T07:24:35.272338Z","roads":["Melitopl-Inzovka"]}
+{"id":"2f27T7D51coajZeD3UohcDxbNjFZdmzA","intent":"threat","at":"2026-11-23T07:24:35.272338Z","roads":["Melitopl-Inzovka"]},
+{"id":"1TekznZrLDd-y5SQIN4UD-cqMtink1LD","intent":"threat","at":"2026-11-23T07:45:56.880414Z","roads":["Doneck-Harcisk"]},
+{"id":"SGtBlFNcilcp82c5J0T2xcofJKdaY90_","intent":"clear","at":"2026-11-23T07:49:02.999933Z","roads":["Doneck-Panteleimonovka","Panteleimonovka-Gorlovka"]},
+{"id":"DMDled9-IuTbbqHz-J91O3KVVsn-Yslo","intent":"clear","at":"2026-11-23T07:49:06.336093Z","roads":["Gorlovka-Debalcevo"]}
 ],"changes":[
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
@@ -740,5 +743,9 @@
 {"road":"Inzovka-Berdyansk","status":"busy","from":"neutral","at":"2026-11-23T07:24:11.156Z"},
 {"road":"Melitopl-Inzovka","status":"busy","from":"neutral","at":"2026-11-23T07:24:36.145Z"},
 {"road":"Inzovka-Berdyansk","status":"neutral","from":"busy","at":"2026-11-23T07:39:11.581Z"},
-{"road":"Melitopl-Inzovka","status":"neutral","from":"busy","at":"2026-11-23T07:39:35.591Z"}
+{"road":"Melitopl-Inzovka","status":"neutral","from":"busy","at":"2026-11-23T07:39:35.591Z"},
+{"road":"Doneck-Harcisk","status":"busy","from":"neutral","at":"2026-11-23T07:45:57.829Z"},
+{"road":"Doneck-Panteleimonovka","status":"clear","from":"busy","at":"2026-11-23T07:49:03.921Z"},
+{"road":"Panteleimonovka-Gorlovka","status":"clear","from":"busy","at":"2026-11-23T07:49:03.921Z"},
+{"road":"Gorlovka-Debalcevo","status":"clear","from":"busy","at":"2026-11-23T07:49:06.925Z"}
 ]}

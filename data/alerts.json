@@ -689,5 +689,11 @@
 {"road":"Shahtersk-Torez","status":"clear","from":"neutral","at":"2026-11-23T04:02:03.061Z"},
 {"road":"Torez-KrasniyLuch","status":"clear","from":"neutral","at":"2026-11-23T04:02:06.102Z"},
 {"road":"Torez-Kuibyshevo","status":"clear","from":"neutral","at":"2026-11-23T04:02:13.098Z"},
-{"road":"Torez-Mius","status":"clear","from":"neutral","at":"2026-11-23T04:02:17.064Z"}
+{"road":"Torez-Mius","status":"clear","from":"neutral","at":"2026-11-23T04:02:17.064Z"},
+{"road":"Doneck-Harcisk","status":"neutral","from":"clear","at":"2026-11-23T04:26:00.813Z"},
+{"road":"Harcisk-Shahtersk","status":"neutral","from":"clear","at":"2026-11-23T04:26:00.813Z"},
+{"road":"Shahtersk-Torez","status":"neutral","from":"clear","at":"2026-11-23T04:26:00.813Z"},
+{"road":"Torez-KrasniyLuch","status":"neutral","from":"clear","at":"2026-11-23T04:26:00.813Z"},
+{"road":"Torez-Kuibyshevo","status":"neutral","from":"clear","at":"2026-11-23T04:26:00.813Z"},
+{"road":"Torez-Mius","status":"neutral","from":"clear","at":"2026-11-23T04:26:00.813Z"}
 ]}

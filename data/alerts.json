@@ -918,5 +918,8 @@
 {"road":"Panteleimonovka-Gorlovka","status":"neutral","from":"clear","at":"2026-11-24T11:51:30.964Z"},
 {"road":"Gorlovka-Debalcevo","status":"neutral","from":"clear","at":"2026-11-24T11:51:33.948Z"},
 {"road":"Doneck-Harcisk","status":"neutral","from":"clear","at":"2026-11-24T12:02:55.096Z"},
-{"road":"Harcisk-Shahtersk","status":"neutral","from":"clear","at":"2026-11-24T12:03:35.110Z"}
+{"road":"Harcisk-Shahtersk","status":"neutral","from":"clear","at":"2026-11-24T12:03:35.110Z"},
+{"road":"Mariupl-Novoazovsk","status":"neutral","from":"busy","at":"2026-11-24T12:06:00.170Z"},
+{"road":"Mariupl-Volnovaha","status":"neutral","from":"busy","at":"2026-11-24T12:06:00.170Z"},
+{"road":"Novoazovsk-Veselovoznesenka","status":"neutral","from":"busy","at":"2026-11-24T12:06:00.170Z"}
 ]}

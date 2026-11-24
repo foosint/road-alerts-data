@@ -956,5 +956,7 @@
 {"road":"Mariupl-Volnovaha","status":"busy","from":"neutral","at":"2026-11-24T17:07:19.087Z"},
 {"road":"Mariupl-Novoazovsk","status":"busy","from":"neutral","at":"2026-11-24T17:29:10.779Z"},
 {"road":"Novoazovsk-Veselovoznesenka","status":"busy","from":"neutral","at":"2026-11-24T17:29:10.779Z"},
-{"road":"Berdyansk-Mariupl","status":"busy","from":"neutral","at":"2026-11-24T17:33:45.777Z"}
+{"road":"Berdyansk-Mariupl","status":"busy","from":"neutral","at":"2026-11-24T17:33:45.777Z"},
+{"road":"Doneck-Panteleimonovka","status":"neutral","from":"busy","at":"2026-11-24T17:48:16.174Z"},
+{"road":"Panteleimonovka-Gorlovka","status":"neutral","from":"busy","at":"2026-11-24T17:48:16.174Z"}
 ]}

@@ -864,5 +864,6 @@
 {"road":"Berdyansk-Mariupl","status":"busy","from":"neutral","at":"2026-11-24T04:39:19.138Z"},
 {"road":"Inzovka-Berdyansk","status":"busy","from":"neutral","at":"2026-11-24T04:53:47.526Z"},
 {"road":"Berdyansk-Mariupl","status":"neutral","from":"busy","at":"2026-11-24T04:54:18.529Z"},
-{"road":"Berdyansk-Mariupl","status":"busy","from":"neutral","at":"2026-11-24T05:02:34.866Z"}
+{"road":"Berdyansk-Mariupl","status":"busy","from":"neutral","at":"2026-11-24T05:02:34.866Z"},
+{"road":"Inzovka-Berdyansk","status":"neutral","from":"busy","at":"2026-11-24T05:08:47.048Z"}
 ]}

@@ -913,5 +913,8 @@
 {"road":"Panteleimonovka-Gorlovka","status":"clear","from":"busy","at":"2026-11-24T11:35:49.060Z"},
 {"road":"Gorlovka-Debalcevo","status":"clear","from":"busy","at":"2026-11-24T11:35:52.171Z"},
 {"road":"Doneck-Harcisk","status":"clear","from":"busy","at":"2026-11-24T11:47:56.314Z"},
-{"road":"Harcisk-Shahtersk","status":"clear","from":"busy","at":"2026-11-24T11:48:34.819Z"}
+{"road":"Harcisk-Shahtersk","status":"clear","from":"busy","at":"2026-11-24T11:48:34.819Z"},
+{"road":"Doneck-Panteleimonovka","status":"neutral","from":"clear","at":"2026-11-24T11:51:30.964Z"},
+{"road":"Panteleimonovka-Gorlovka","status":"neutral","from":"clear","at":"2026-11-24T11:51:30.964Z"},
+{"road":"Gorlovka-Debalcevo","status":"neutral","from":"clear","at":"2026-11-24T11:51:33.948Z"}
 ]}

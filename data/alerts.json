@@ -926,5 +926,6 @@
 {"road":"Novoazovsk-Veselovoznesenka","status":"neutral","from":"busy","at":"2026-11-24T12:06:00.170Z"},
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-24T13:12:42.033Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-24T13:12:42.033Z"},
-{"road":"Gorlovka-Debalcevo","status":"busy","from":"neutral","at":"2026-11-24T13:12:44.409Z"}
+{"road":"Gorlovka-Debalcevo","status":"busy","from":"neutral","at":"2026-11-24T13:12:44.409Z"},
+{"road":"Gorlovka-Debalcevo","status":"neutral","from":"busy","at":"2026-11-24T13:18:35.607Z"}
 ]}

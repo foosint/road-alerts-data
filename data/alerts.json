@@ -877,5 +877,6 @@
 {"road":"Mariupl-Novoazovsk","status":"busy","from":"neutral","at":"2026-11-24T08:08:43.492Z"},
 {"road":"Novoazovsk-Veselovoznesenka","status":"busy","from":"neutral","at":"2026-11-24T08:08:43.492Z"},
 {"road":"Mariupl-Volnovaha","status":"busy","from":"neutral","at":"2026-11-24T08:08:51.555Z"},
-{"road":"Doneck-Harcisk","status":"clear","from":"busy","at":"2026-11-24T08:36:30.308Z"}
+{"road":"Doneck-Harcisk","status":"clear","from":"busy","at":"2026-11-24T08:36:30.308Z"},
+{"road":"Doneck-Harcisk","status":"neutral","from":"clear","at":"2026-11-24T08:51:30.794Z"}
 ]}

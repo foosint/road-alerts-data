@@ -396,7 +396,9 @@
 {"id":"SZ7bYENXGzeJIIiZpfnJjkAyBRuwYBTs","intent":"threat","at":"2026-11-24T04:08:39.003942Z","roads":["Berdyansk-Mariupl"]},
 {"id":"maJQkoLRQ2WpepUpt6eSS7ZxPHZA9q2d","intent":"threat","at":"2026-11-24T04:09:12.964609Z","roads":["Berdyansk-Mariupl"]},
 {"id":"Ltcf3vn2ZwogLfI2VimXHx7zC4NYV_GK","intent":"threat","at":"2026-11-24T04:18:21.732353Z","roads":["Inzovka-Berdyansk"]},
-{"id":"6W8G3XCdRAKXajpQcMTmSlfLBbWtFqwb","intent":"threat","at":"2026-11-24T04:39:18.290161Z","roads":["Berdyansk-Mariupl"]}
+{"id":"6W8G3XCdRAKXajpQcMTmSlfLBbWtFqwb","intent":"threat","at":"2026-11-24T04:39:18.290161Z","roads":["Berdyansk-Mariupl"]},
+{"id":"-0GwM2HLHui42vmmwassc6HNyz-ffOcP","intent":"threat","at":"2026-11-24T04:51:04.089912Z","roads":["Inzovka-Berdyansk"]},
+{"id":"PIsdhicFFI3KaF4PCh0VthP8QLROvEqf","intent":"threat","at":"2026-11-24T04:53:46.759015Z","roads":["Inzovka-Berdyansk"]}
 ],"changes":[
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
@@ -858,5 +860,7 @@
 {"road":"Novogrigorovka-Melitopl","status":"neutral","from":"busy","at":"2026-11-24T04:21:07.635Z"},
 {"road":"Berdyansk-Mariupl","status":"neutral","from":"busy","at":"2026-11-24T04:24:13.743Z"},
 {"road":"Inzovka-Berdyansk","status":"neutral","from":"busy","at":"2026-11-24T04:33:22.019Z"},
-{"road":"Berdyansk-Mariupl","status":"busy","from":"neutral","at":"2026-11-24T04:39:19.138Z"}
+{"road":"Berdyansk-Mariupl","status":"busy","from":"neutral","at":"2026-11-24T04:39:19.138Z"},
+{"road":"Inzovka-Berdyansk","status":"busy","from":"neutral","at":"2026-11-24T04:53:47.526Z"},
+{"road":"Berdyansk-Mariupl","status":"neutral","from":"busy","at":"2026-11-24T04:54:18.529Z"}
 ]}

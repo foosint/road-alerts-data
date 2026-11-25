@@ -483,7 +483,8 @@
 {"id":"vMujzTN98-ahrNQZcqMwMCxaHqciKgN9","intent":"threat","at":"2026-11-25T11:33:47.316075Z","roads":["Inzovka-Berdyansk"]},
 {"id":"si6BRTePbHD1MUsQlymBuSIaD4vUJrov","intent":"threat","at":"2026-11-25T11:47:07.467121Z","roads":["Melitopl-Inzovka"]},
 {"id":"nHDQ9voD1SHq_hlCLkpgUgoi62y9_sb1","intent":"threat","at":"2026-11-25T11:47:25.641209Z","roads":["Doneck-Panteleimonovka","Panteleimonovka-Gorlovka"]},
-{"id":"bxbd6egnIbawjmqNWSLqpr8jT-oilvr3","intent":"clear","at":"2026-11-25T11:47:50.433103Z","roads":["Enakievo-Shahtersk"]}
+{"id":"bxbd6egnIbawjmqNWSLqpr8jT-oilvr3","intent":"clear","at":"2026-11-25T11:47:50.433103Z","roads":["Enakievo-Shahtersk"]},
+{"id":"n1HvR-uQJQuUQhKo2P_dD_t-d-8i_3Jd","intent":"clear","at":"2026-11-25T12:00:28.351738Z","roads":["Artemovsk-Debalcevo"]}
 ],"changes":[
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
@@ -1104,5 +1105,7 @@
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-25T11:47:26.061Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-25T11:47:26.061Z"},
 {"road":"Enakievo-Shahtersk","status":"clear","from":"neutral","at":"2026-11-25T11:47:50.989Z"},
-{"road":"Inzovka-Berdyansk","status":"neutral","from":"busy","at":"2026-11-25T11:48:47.994Z"}
+{"road":"Inzovka-Berdyansk","status":"neutral","from":"busy","at":"2026-11-25T11:48:47.994Z"},
+{"road":"Artemovsk-Debalcevo","status":"clear","from":"busy","at":"2026-11-25T12:00:29.199Z"},
+{"road":"Melitopl-Inzovka","status":"neutral","from":"busy","at":"2026-11-25T12:02:08.241Z"}
 ]}

@@ -1168,5 +1168,7 @@
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-25T20:52:23.866Z"},
 {"road":"Novogrigorovka-Melitopl","status":"neutral","from":"busy","at":"2026-11-25T20:56:20.012Z"},
 {"road":"Shahtersk-Torez","status":"clear","from":"busy","at":"2026-11-25T22:08:31.035Z"},
-{"road":"Harcisk-Shahtersk","status":"clear","from":"busy","at":"2026-11-25T22:08:35.065Z"}
+{"road":"Harcisk-Shahtersk","status":"clear","from":"busy","at":"2026-11-25T22:08:35.065Z"},
+{"road":"Harcisk-Shahtersk","status":"neutral","from":"clear","at":"2026-11-25T22:26:00.463Z"},
+{"road":"Shahtersk-Torez","status":"neutral","from":"clear","at":"2026-11-25T22:26:00.463Z"}
 ]}

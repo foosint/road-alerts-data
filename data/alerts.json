@@ -452,7 +452,9 @@
 {"id":"XwM7MbrMkBQun8AnKRyfg7Yv5yOCdvmy","intent":"clear","at":"2026-11-25T02:14:36.405282Z","roads":["Shahtersk-Torez"]},
 {"id":"rOGuxDNmiGXcejzFySJAaJ6_smKxnBY7","intent":"clear","at":"2026-11-25T02:14:40.086533Z","roads":["Torez-KrasniyLuch"]},
 {"id":"pPMgSHEYb5642UfiRjCeOCS4nsyeCksI","intent":"clear","at":"2026-11-25T02:14:44.920756Z","roads":["Torez-Kuibyshevo"]},
-{"id":"618UhJoc40BSU-kYMnRFwFo7aK_qiSZJ","intent":"clear","at":"2026-11-25T02:14:49.481093Z","roads":["Torez-Mius"]}
+{"id":"618UhJoc40BSU-kYMnRFwFo7aK_qiSZJ","intent":"clear","at":"2026-11-25T02:14:49.481093Z","roads":["Torez-Mius"]},
+{"id":"QEP2V2n2n-hehIk9LXz-NG10ywQVqo6H","intent":"threat","at":"2026-11-25T05:13:54.963665Z","roads":["Melitopl-Inzovka"]},
+{"id":"LdCd-rxgK9IKDArVr1ThrfP95XdrwzCd","intent":"threat","at":"2026-11-25T05:14:22.207390Z","roads":["Inzovka-Berdyansk"]}
 ],"changes":[
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
@@ -1026,5 +1028,7 @@
 {"road":"Shahtersk-Torez","status":"neutral","from":"clear","at":"2026-11-25T02:26:00.121Z"},
 {"road":"Torez-KrasniyLuch","status":"neutral","from":"clear","at":"2026-11-25T02:26:00.121Z"},
 {"road":"Torez-Kuibyshevo","status":"neutral","from":"clear","at":"2026-11-25T02:26:00.121Z"},
-{"road":"Torez-Mius","status":"neutral","from":"clear","at":"2026-11-25T02:26:00.121Z"}
+{"road":"Torez-Mius","status":"neutral","from":"clear","at":"2026-11-25T02:26:00.121Z"},
+{"road":"Melitopl-Inzovka","status":"busy","from":"neutral","at":"2026-11-25T05:13:55.749Z"},
+{"road":"Inzovka-Berdyansk","status":"busy","from":"neutral","at":"2026-11-25T05:14:22.984Z"}
 ]}

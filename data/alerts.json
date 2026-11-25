@@ -1139,5 +1139,7 @@
 {"road":"Gorlovka-Debalcevo","status":"neutral","from":"busy","at":"2026-11-25T13:53:13.425Z"},
 {"road":"Doneck-Harcisk","status":"clear","from":"busy","at":"2026-11-25T14:53:54.147Z"},
 {"road":"Harcisk-Shahtersk","status":"clear","from":"busy","at":"2026-11-25T14:53:57.325Z"},
-{"road":"Melitopl-Veseloe","status":"busy","from":"neutral","at":"2026-11-25T14:58:31.206Z"}
+{"road":"Melitopl-Veseloe","status":"busy","from":"neutral","at":"2026-11-25T14:58:31.206Z"},
+{"road":"Doneck-Harcisk","status":"neutral","from":"clear","at":"2026-11-25T15:06:00.383Z"},
+{"road":"Harcisk-Shahtersk","status":"neutral","from":"clear","at":"2026-11-25T15:06:00.383Z"}
 ]}

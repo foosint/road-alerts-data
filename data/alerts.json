@@ -476,7 +476,10 @@
 {"id":"E2lTwVGUqrn2ySbSOJkFTkvNypu5XQeM","intent":"threat","at":"2026-11-25T10:44:01.440311Z","roads":["Gorlovka-Debalcevo"]},
 {"id":"I0KJhl8zyXMJ231ol-KEF4Pl6wM973xs","intent":"threat","at":"2026-11-25T10:59:29.412624Z","roads":["Artemovsk-Debalcevo"]},
 {"id":"E-JiWFvE5udIbka1DHfBT1vOJ9MfzEu6","intent":"threat","at":"2026-11-25T11:24:04.760604Z","roads":["Inzovka-Berdyansk"]},
-{"id":"bVAx5M6AeLYG7tsXKp9gaICmPTFROUS0","intent":"threat","at":"2026-11-25T11:24:49.152417Z","roads":["Melitopl-Inzovka"]}
+{"id":"bVAx5M6AeLYG7tsXKp9gaICmPTFROUS0","intent":"threat","at":"2026-11-25T11:24:49.152417Z","roads":["Melitopl-Inzovka"]},
+{"id":"h-bB0BJ43GcYoXm0-rR2_4Q8Dw6iTpFT","intent":"threat","at":"2026-11-25T11:27:47.150606Z","roads":["Harcisk-Shahtersk"]},
+{"id":"APXumVRCDeNj5NpQ6sDSox4mvUEksNW9","intent":"threat","at":"2026-11-25T11:28:00.385640Z","roads":["Debalcevo-Lugansk"]},
+{"id":"sib9iShZxxKvSeWBIN5lHjwuwBEHHeYm","intent":"threat","at":"2026-11-25T11:28:03.532528Z","roads":["Shahtersk-Torez"]}
 ],"changes":[
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
@@ -1088,5 +1091,8 @@
 {"road":"Panteleimonovka-Gorlovka","status":"neutral","from":"busy","at":"2026-11-25T10:58:49.621Z"},
 {"road":"Artemovsk-Debalcevo","status":"busy","from":"neutral","at":"2026-11-25T10:59:29.681Z"},
 {"road":"Inzovka-Berdyansk","status":"busy","from":"neutral","at":"2026-11-25T11:24:05.263Z"},
-{"road":"Melitopl-Inzovka","status":"busy","from":"neutral","at":"2026-11-25T11:24:49.524Z"}
+{"road":"Melitopl-Inzovka","status":"busy","from":"neutral","at":"2026-11-25T11:24:49.524Z"},
+{"road":"Harcisk-Shahtersk","status":"busy","from":"neutral","at":"2026-11-25T11:27:47.370Z"},
+{"road":"Debalcevo-Lugansk","status":"busy","from":"neutral","at":"2026-11-25T11:28:01.477Z"},
+{"road":"Shahtersk-Torez","status":"busy","from":"neutral","at":"2026-11-25T11:28:04.516Z"}
 ]}

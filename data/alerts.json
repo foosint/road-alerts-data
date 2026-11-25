@@ -1119,5 +1119,7 @@
 {"road":"Harcisk-Shahtersk","status":"clear","from":"busy","at":"2026-11-25T12:25:05.145Z"},
 {"road":"Shahtersk-Torez","status":"clear","from":"busy","at":"2026-11-25T12:25:51.269Z"},
 {"road":"Inzovka-Berdyansk","status":"busy","from":"neutral","at":"2026-11-25T12:33:02.306Z"},
-{"road":"Doneck-Harcisk","status":"busy","from":"neutral","at":"2026-11-25T12:38:35.482Z"}
+{"road":"Doneck-Harcisk","status":"busy","from":"neutral","at":"2026-11-25T12:38:35.482Z"},
+{"road":"Harcisk-Shahtersk","status":"neutral","from":"clear","at":"2026-11-25T12:40:04.493Z"},
+{"road":"Shahtersk-Torez","status":"neutral","from":"clear","at":"2026-11-25T12:40:51.518Z"}
 ]}

@@ -1095,5 +1095,6 @@
 {"road":"Melitopl-Inzovka","status":"busy","from":"neutral","at":"2026-11-25T11:24:49.524Z"},
 {"road":"Harcisk-Shahtersk","status":"busy","from":"neutral","at":"2026-11-25T11:27:47.370Z"},
 {"road":"Debalcevo-Lugansk","status":"busy","from":"neutral","at":"2026-11-25T11:28:01.477Z"},
-{"road":"Shahtersk-Torez","status":"busy","from":"neutral","at":"2026-11-25T11:28:04.516Z"}
+{"road":"Shahtersk-Torez","status":"busy","from":"neutral","at":"2026-11-25T11:28:04.516Z"},
+{"road":"Melitopl-Inzovka","status":"neutral","from":"busy","at":"2026-11-25T11:39:49.721Z"}
 ]}

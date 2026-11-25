@@ -1163,5 +1163,6 @@
 {"road":"Novogrigorovka-Melitopl","status":"busy","from":"neutral","at":"2026-11-25T20:41:19.545Z"},
 {"road":"Gorlovka-Debalcevo","status":"neutral","from":"busy","at":"2026-11-25T20:46:00.651Z"},
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-25T20:52:23.866Z"},
-{"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-25T20:52:23.866Z"}
+{"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-25T20:52:23.866Z"},
+{"road":"Novogrigorovka-Melitopl","status":"neutral","from":"busy","at":"2026-11-25T20:56:20.012Z"}
 ]}

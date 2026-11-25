@@ -1159,5 +1159,6 @@
 {"road":"Novogrigorovka-Melitopl","status":"busy","from":"neutral","at":"2026-11-25T19:52:43.255Z"},
 {"road":"Shahtersk-Torez","status":"busy","from":"neutral","at":"2026-11-25T20:05:40.639Z"},
 {"road":"Novogrigorovka-Melitopl","status":"neutral","from":"busy","at":"2026-11-25T20:07:42.700Z"},
-{"road":"Novogrigorovka-Melitopl","status":"busy","from":"neutral","at":"2026-11-25T20:41:19.545Z"}
+{"road":"Novogrigorovka-Melitopl","status":"busy","from":"neutral","at":"2026-11-25T20:41:19.545Z"},
+{"road":"Gorlovka-Debalcevo","status":"neutral","from":"busy","at":"2026-11-25T20:46:00.651Z"}
 ]}

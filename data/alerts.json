@@ -1037,5 +1037,7 @@
 {"road":"Melitopl-Inzovka","status":"neutral","from":"busy","at":"2026-11-25T05:28:55.288Z"},
 {"road":"Inzovka-Berdyansk","status":"neutral","from":"busy","at":"2026-11-25T05:29:22.310Z"},
 {"road":"Inzovka-Berdyansk","status":"busy","from":"neutral","at":"2026-11-25T05:31:54.405Z"},
-{"road":"Melitopl-Inzovka","status":"busy","from":"neutral","at":"2026-11-25T05:32:19.517Z"}
+{"road":"Melitopl-Inzovka","status":"busy","from":"neutral","at":"2026-11-25T05:32:19.517Z"},
+{"road":"Inzovka-Berdyansk","status":"neutral","from":"busy","at":"2026-11-25T05:46:54.066Z"},
+{"road":"Melitopl-Inzovka","status":"neutral","from":"busy","at":"2026-11-25T05:47:19.061Z"}
 ]}

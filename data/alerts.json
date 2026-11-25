@@ -997,5 +997,10 @@
 {"road":"Enakievo-Shahtersk","status":"busy","from":"neutral","at":"2026-11-24T21:52:59.722Z"},
 {"road":"Doneck-Harcisk","status":"neutral","from":"busy","at":"2026-11-24T22:06:52.188Z"},
 {"road":"Mariupl-Volnovaha","status":"busy","from":"neutral","at":"2026-11-24T22:14:17.403Z"},
-{"road":"Doneck-Harcisk","status":"busy","from":"neutral","at":"2026-11-24T22:25:52.874Z"}
+{"road":"Doneck-Harcisk","status":"busy","from":"neutral","at":"2026-11-24T22:25:52.874Z"},
+{"road":"Doneck-Panteleimonovka","status":"neutral","from":"busy","at":"2026-11-25T00:26:27.171Z"},
+{"road":"Panteleimonovka-Gorlovka","status":"neutral","from":"busy","at":"2026-11-25T00:26:27.171Z"},
+{"road":"Gorlovka-Debalcevo","status":"neutral","from":"busy","at":"2026-11-25T00:26:34.305Z"},
+{"road":"Artemovsk-Debalcevo","status":"neutral","from":"busy","at":"2026-11-25T00:26:41.175Z"},
+{"road":"Enakievo-Shahtersk","status":"neutral","from":"busy","at":"2026-11-25T00:26:48.162Z"}
 ]}

@@ -1052,5 +1052,6 @@
 {"road":"Inzovka-Berdyansk","status":"busy","from":"neutral","at":"2026-11-25T07:29:36.958Z"},
 {"road":"Berdyansk-Tokmak","status":"busy","from":"neutral","at":"2026-11-25T07:30:02.352Z"},
 {"road":"Inzovka-Berdyansk","status":"neutral","from":"busy","at":"2026-11-25T07:44:37.282Z"},
-{"road":"Novogrigorovka-Melitopl","status":"busy","from":"neutral","at":"2026-11-25T07:47:25.409Z"}
+{"road":"Novogrigorovka-Melitopl","status":"busy","from":"neutral","at":"2026-11-25T07:47:25.409Z"},
+{"road":"Berdyansk-Tokmak","status":"neutral","from":"busy","at":"2026-11-25T07:53:33.007Z"}
 ]}

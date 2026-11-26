@@ -1210,5 +1210,6 @@
 {"road":"Enakievo-Shahtersk","status":"clear","from":"busy","at":"2026-11-26T08:20:12.001Z"},
 {"road":"Enakievo-Shahtersk","status":"neutral","from":"clear","at":"2026-11-26T08:46:00.579Z"},
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-26T09:44:01.182Z"},
-{"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-26T09:44:01.182Z"}
+{"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-26T09:44:01.182Z"},
+{"road":"Berdyansk-Mariupl","status":"neutral","from":"busy","at":"2026-11-26T10:06:00.702Z"}
 ]}

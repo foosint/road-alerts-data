@@ -541,7 +541,9 @@
 {"id":"JKr-Iwp_8TafdMb4hk4yD2tIX-9YKUdI","intent":"threat","at":"2026-11-26T20:24:44.950124Z","roads":["Shahtersk-Torez"]},
 {"id":"njlMqPLV2ntTbcr25DTD1FkaGhvjThQM","intent":"threat","at":"2026-11-26T20:25:05.968294Z","roads":["Torez-KrasniyLuch"]},
 {"id":"bdjzI6rrmnjNG70yDzbx5bgolTEKT4vp","intent":"threat","at":"2026-11-26T20:25:31.608505Z","roads":["Torez-Kuibyshevo"]},
-{"id":"FjxqyP4qIP5InEjOBqvKNcm1rvB3oNmp","intent":"threat","at":"2026-11-26T20:25:41.213834Z","roads":["Torez-Mius"]}
+{"id":"FjxqyP4qIP5InEjOBqvKNcm1rvB3oNmp","intent":"threat","at":"2026-11-26T20:25:41.213834Z","roads":["Torez-Mius"]},
+{"id":"WQ9SZv2tjf9IPV6_9cZtPK8T0Bc3Hg2z","intent":"threat","at":"2026-11-26T20:52:32.939364Z","roads":["Debalcevo-Lugansk"]},
+{"id":"bdSRo_kr1Lm4cYRuKu9YhlAeX9_AiZxK","intent":"threat","at":"2026-11-26T20:53:35.569741Z","roads":["Debalcevo-Mius"]}
 ],"changes":[
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
@@ -1268,5 +1270,7 @@
 {"road":"Shahtersk-Torez","status":"busy","from":"neutral","at":"2026-11-26T20:24:46.253Z"},
 {"road":"Torez-KrasniyLuch","status":"busy","from":"neutral","at":"2026-11-26T20:25:06.388Z"},
 {"road":"Torez-Kuibyshevo","status":"busy","from":"neutral","at":"2026-11-26T20:25:32.381Z"},
-{"road":"Torez-Mius","status":"busy","from":"neutral","at":"2026-11-26T20:25:42.506Z"}
+{"road":"Torez-Mius","status":"busy","from":"neutral","at":"2026-11-26T20:25:42.506Z"},
+{"road":"Debalcevo-Lugansk","status":"busy","from":"neutral","at":"2026-11-26T20:52:32.998Z"},
+{"road":"Debalcevo-Mius","status":"busy","from":"neutral","at":"2026-11-26T20:53:36.175Z"}
 ]}

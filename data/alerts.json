@@ -1277,5 +1277,7 @@
 {"road":"Panteleimonovka-Gorlovka","status":"neutral","from":"busy","at":"2026-11-26T21:43:19.336Z"},
 {"road":"Gorlovka-Debalcevo","status":"neutral","from":"busy","at":"2026-11-26T21:43:25.283Z"},
 {"road":"Artemovsk-Debalcevo","status":"neutral","from":"busy","at":"2026-11-26T21:43:30.426Z"},
-{"road":"Enakievo-Shahtersk","status":"neutral","from":"busy","at":"2026-11-26T21:43:39.311Z"}
+{"road":"Enakievo-Shahtersk","status":"neutral","from":"busy","at":"2026-11-26T21:43:39.311Z"},
+{"road":"Debalcevo-Mius","status":"neutral","from":"busy","at":"2026-11-26T21:45:03.378Z"},
+{"road":"Debalcevo-Lugansk","status":"neutral","from":"busy","at":"2026-11-26T21:46:40.428Z"}
 ]}

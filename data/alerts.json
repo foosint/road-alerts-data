@@ -1174,5 +1174,7 @@
 {"road":"Harcisk-Shahtersk","status":"neutral","from":"clear","at":"2026-11-25T22:26:00.463Z"},
 {"road":"Shahtersk-Torez","status":"neutral","from":"clear","at":"2026-11-25T22:26:00.463Z"},
 {"road":"Berdyansk-Mariupl","status":"busy","from":"neutral","at":"2026-11-26T02:18:55.021Z"},
-{"road":"Berdyansk-Mariupl","status":"neutral","from":"busy","at":"2026-11-26T02:33:54.419Z"}
+{"road":"Berdyansk-Mariupl","status":"neutral","from":"busy","at":"2026-11-26T02:33:54.419Z"},
+{"road":"Doneck-Panteleimonovka","status":"neutral","from":"busy","at":"2026-11-26T04:46:00.076Z"},
+{"road":"Panteleimonovka-Gorlovka","status":"neutral","from":"busy","at":"2026-11-26T04:46:00.076Z"}
 ]}

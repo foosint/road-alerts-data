@@ -1246,5 +1246,6 @@
 {"road":"Gorlovka-Debalcevo","status":"busy","from":"neutral","at":"2026-11-26T16:39:21.255Z"},
 {"road":"Shahtersk-Torez","status":"busy","from":"neutral","at":"2026-11-26T17:41:09.296Z"},
 {"road":"Gorlovka-Debalcevo","status":"neutral","from":"busy","at":"2026-11-26T18:27:43.140Z"},
-{"road":"Shahtersk-Torez","status":"clear","from":"busy","at":"2026-11-26T18:58:09.945Z"}
+{"road":"Shahtersk-Torez","status":"clear","from":"busy","at":"2026-11-26T18:58:09.945Z"},
+{"road":"Shahtersk-Torez","status":"neutral","from":"clear","at":"2026-11-26T19:26:00.658Z"}
 ]}

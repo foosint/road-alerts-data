@@ -1195,5 +1195,6 @@
 {"road":"Gorlovka-Debalcevo","status":"clear","from":"busy","at":"2026-11-26T07:10:25.062Z"},
 {"road":"Volnovaha-Doneck","status":"busy","from":"neutral","at":"2026-11-26T07:11:45.129Z"},
 {"road":"Mariupl-Volnovaha","status":"busy","from":"neutral","at":"2026-11-26T07:11:51.247Z"},
-{"road":"Enakievo-Shahtersk","status":"busy","from":"clear","at":"2026-11-26T07:23:39.676Z"}
+{"road":"Enakievo-Shahtersk","status":"busy","from":"clear","at":"2026-11-26T07:23:39.676Z"},
+{"road":"Gorlovka-Debalcevo","status":"neutral","from":"clear","at":"2026-11-26T07:26:00.461Z"}
 ]}

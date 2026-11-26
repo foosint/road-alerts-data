@@ -1214,5 +1214,7 @@
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-26T09:44:01.182Z"},
 {"road":"Berdyansk-Mariupl","status":"neutral","from":"busy","at":"2026-11-26T10:06:00.702Z"},
 {"road":"Doneck-Panteleimonovka","status":"clear","from":"busy","at":"2026-11-26T10:44:55.778Z"},
-{"road":"Panteleimonovka-Gorlovka","status":"clear","from":"busy","at":"2026-11-26T10:44:55.778Z"}
+{"road":"Panteleimonovka-Gorlovka","status":"clear","from":"busy","at":"2026-11-26T10:44:55.778Z"},
+{"road":"Doneck-Panteleimonovka","status":"neutral","from":"clear","at":"2026-11-26T11:06:00.294Z"},
+{"road":"Panteleimonovka-Gorlovka","status":"neutral","from":"clear","at":"2026-11-26T11:06:00.294Z"}
 ]}

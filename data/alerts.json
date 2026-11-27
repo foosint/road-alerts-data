@@ -1377,5 +1377,6 @@
 {"road":"Shahtersk-Torez","status":"busy","from":"neutral","at":"2026-11-27T20:41:45.958Z"},
 {"road":"Torez-KrasniyLuch","status":"busy","from":"neutral","at":"2026-11-27T20:41:50.198Z"},
 {"road":"Torez-Kuibyshevo","status":"busy","from":"neutral","at":"2026-11-27T20:41:55.157Z"},
-{"road":"Torez-Mius","status":"busy","from":"neutral","at":"2026-11-27T20:41:58.242Z"}
+{"road":"Torez-Mius","status":"busy","from":"neutral","at":"2026-11-27T20:41:58.242Z"},
+{"road":"Doneck-Harcisk","status":"neutral","from":"busy","at":"2026-11-27T20:56:38.214Z"}
 ]}

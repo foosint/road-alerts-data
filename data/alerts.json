@@ -549,7 +549,10 @@
 {"id":"-ItDTFnLQbjegeXAu1HKBT2DKv6NNULR","intent":"threat","at":"2026-11-27T05:50:38.271199Z","roads":["Doneck-Harcisk"]},
 {"id":"RihiXJNqaQAQdU_vBPaa5tvMhoA7aeDI","intent":"threat","at":"2026-11-27T05:51:05.164660Z","roads":["Harcisk-Shahtersk"]},
 {"id":"6YZEjtgo824CsZH7riE8-UntF6JDx4OE","intent":"clear","at":"2026-11-27T05:59:49.245738Z","roads":["Doneck-Panteleimonovka","Panteleimonovka-Gorlovka"]},
-{"id":"EPWhm09ixcn13slsx_gJX8cuUnX7xV2_","intent":"clear","at":"2026-11-27T05:59:52.468282Z","roads":["Gorlovka-Debalcevo"]}
+{"id":"EPWhm09ixcn13slsx_gJX8cuUnX7xV2_","intent":"clear","at":"2026-11-27T05:59:52.468282Z","roads":["Gorlovka-Debalcevo"]},
+{"id":"iJWXFl7gdk99T3FsIQJ33a6joOfd4_tA","intent":"threat","at":"2026-11-27T06:00:46.612451Z","roads":["Doneck-Panteleimonovka","Panteleimonovka-Gorlovka"]},
+{"id":"wxLk5R54r-0BGIMZnm2drSPNAaoau8wG","intent":"threat","at":"2026-11-27T06:00:48.830636Z","roads":["Gorlovka-Debalcevo"]},
+{"id":"J2Jjk9gLLgN4-OAPECjK7mu7fJSd-ve_","intent":"threat","at":"2026-11-27T06:00:57.837065Z","roads":["Enakievo-Shahtersk"]}
 ],"changes":[
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
@@ -1299,5 +1302,9 @@
 {"road":"Harcisk-Shahtersk","status":"busy","from":"neutral","at":"2026-11-27T05:51:05.850Z"},
 {"road":"Doneck-Panteleimonovka","status":"clear","from":"busy","at":"2026-11-27T05:59:50.050Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"clear","from":"busy","at":"2026-11-27T05:59:50.050Z"},
-{"road":"Gorlovka-Debalcevo","status":"clear","from":"busy","at":"2026-11-27T05:59:53.196Z"}
+{"road":"Gorlovka-Debalcevo","status":"clear","from":"busy","at":"2026-11-27T05:59:53.196Z"},
+{"road":"Doneck-Panteleimonovka","status":"busy","from":"clear","at":"2026-11-27T06:00:47.112Z"},
+{"road":"Panteleimonovka-Gorlovka","status":"busy","from":"clear","at":"2026-11-27T06:00:47.112Z"},
+{"road":"Gorlovka-Debalcevo","status":"busy","from":"clear","at":"2026-11-27T06:00:49.099Z"},
+{"road":"Enakievo-Shahtersk","status":"busy","from":"neutral","at":"2026-11-27T06:00:58.117Z"}
 ]}

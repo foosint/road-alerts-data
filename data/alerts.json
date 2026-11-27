@@ -1337,5 +1337,7 @@
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-27T11:54:48.032Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-27T11:54:48.032Z"},
 {"road":"Doneck-Panteleimonovka","status":"clear","from":"busy","at":"2026-11-27T12:12:03.439Z"},
-{"road":"Panteleimonovka-Gorlovka","status":"clear","from":"busy","at":"2026-11-27T12:12:03.439Z"}
+{"road":"Panteleimonovka-Gorlovka","status":"clear","from":"busy","at":"2026-11-27T12:12:03.439Z"},
+{"road":"Doneck-Panteleimonovka","status":"neutral","from":"clear","at":"2026-11-27T12:26:00.817Z"},
+{"road":"Panteleimonovka-Gorlovka","status":"neutral","from":"clear","at":"2026-11-27T12:26:00.817Z"}
 ]}

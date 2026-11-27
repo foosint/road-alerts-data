@@ -565,7 +565,8 @@
 {"id":"zfBKSStz_yTXBf1aiLS46fFVRhzyxqIx","intent":"threat","at":"2026-11-27T12:40:06.839166Z","roads":["Volnovaha-Doneck"]},
 {"id":"kIrRHp19Ap2DaSyFSoaH9Wbs59lPz2tF","intent":"threat","at":"2026-11-27T17:51:27.135031Z","roads":["Gorlovka-Debalcevo"]},
 {"id":"ntYQ-LnpuVRFnq2SMFFCSZht_ck5ebln","intent":"threat","at":"2026-11-27T18:02:24.143128Z","roads":["Doneck-Panteleimonovka","Panteleimonovka-Gorlovka"]},
-{"id":"nvtzwffzPuxB9MXdI6jMsEVyl26RcYif","intent":"threat","at":"2026-11-27T19:24:01.910652Z","roads":["Doneck-Harcisk"]}
+{"id":"nvtzwffzPuxB9MXdI6jMsEVyl26RcYif","intent":"threat","at":"2026-11-27T19:24:01.910652Z","roads":["Doneck-Harcisk"]},
+{"id":"3gw4cWLOxZJUIAVqta7N3ytGzipFTcNF","intent":"threat","at":"2026-11-27T20:07:32.637659Z","roads":["Berdyansk-Mariupl"]}
 ],"changes":[
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
@@ -1352,5 +1353,6 @@
 {"road":"Doneck-Panteleimonovka","status":"neutral","from":"busy","at":"2026-11-27T19:03:32.118Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"neutral","from":"busy","at":"2026-11-27T19:03:32.118Z"},
 {"road":"Gorlovka-Debalcevo","status":"neutral","from":"busy","at":"2026-11-27T19:03:34.165Z"},
-{"road":"Doneck-Harcisk","status":"busy","from":"neutral","at":"2026-11-27T19:24:02.776Z"}
+{"road":"Doneck-Harcisk","status":"busy","from":"neutral","at":"2026-11-27T19:24:02.776Z"},
+{"road":"Berdyansk-Mariupl","status":"busy","from":"neutral","at":"2026-11-27T20:07:32.959Z"}
 ]}

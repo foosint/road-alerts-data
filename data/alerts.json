@@ -1326,5 +1326,6 @@
 {"road":"Harcisk-Shahtersk","status":"clear","from":"busy","at":"2026-11-27T09:09:14.122Z"},
 {"road":"Doneck-Harcisk","status":"neutral","from":"clear","at":"2026-11-27T09:16:13.092Z"},
 {"road":"Harcisk-Shahtersk","status":"neutral","from":"clear","at":"2026-11-27T09:16:18.182Z"},
-{"road":"Melitopl-Inzovka","status":"busy","from":"neutral","at":"2026-11-27T09:41:00.900Z"}
+{"road":"Melitopl-Inzovka","status":"busy","from":"neutral","at":"2026-11-27T09:41:00.900Z"},
+{"road":"Enakievo-Shahtersk","status":"neutral","from":"busy","at":"2026-11-27T09:46:00.867Z"}
 ]}

@@ -1425,5 +1425,6 @@
 {"road":"Gorlovka-Debalcevo","status":"neutral","from":"clear","at":"2026-11-28T02:46:00.904Z"},
 {"road":"Artemovsk-Debalcevo","status":"busy","from":"neutral","at":"2026-11-28T04:24:29.779Z"},
 {"road":"Artemovsk-Debalcevo","status":"neutral","from":"busy","at":"2026-11-28T04:39:30.158Z"},
-{"road":"Artemovsk-Debalcevo","status":"clear","from":"neutral","at":"2026-11-28T05:24:48.389Z"}
+{"road":"Artemovsk-Debalcevo","status":"clear","from":"neutral","at":"2026-11-28T05:24:48.389Z"},
+{"road":"Artemovsk-Debalcevo","status":"neutral","from":"clear","at":"2026-11-28T05:25:19.348Z"}
 ]}

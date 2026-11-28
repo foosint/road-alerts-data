@@ -594,7 +594,10 @@
 {"id":"loM9w6-1IupZzVRJxKn-s_4j2BgsvOR3","intent":"threat","at":"2026-11-28T05:54:31.005460Z","roads":["Gorlovka-Debalcevo"]},
 {"id":"VWQai7J-M2C90M5-SAwzTPOO9ynVZ-c9","intent":"threat","at":"2026-11-28T07:03:07.548564Z","roads":["Harcisk-Shahtersk"]},
 {"id":"hawTaFtKJ20ePN93oxW7cbAM02JM4Qah","intent":"threat","at":"2026-11-28T07:05:28.182533Z","roads":["Enakievo-Shahtersk"]},
-{"id":"SlQTnVh9VHEMIwOkqPe_mj4iFXcsjCxB","intent":"threat","at":"2026-11-28T07:09:09.441439Z","roads":["Doneck-Harcisk"]}
+{"id":"SlQTnVh9VHEMIwOkqPe_mj4iFXcsjCxB","intent":"threat","at":"2026-11-28T07:09:09.441439Z","roads":["Doneck-Harcisk"]},
+{"id":"9D-sAd6OndPRY9VMrV0jSovsDYX6JvN2","intent":"clear","at":"2026-11-28T08:11:43.298829Z","roads":["Doneck-Harcisk"]},
+{"id":"uLARtcZrCyKpGMDnC5PmLPzPAXCCU5YW","intent":"clear","at":"2026-11-28T08:12:12.043511Z","roads":["Harcisk-Shahtersk"]},
+{"id":"XnPBOdGmYr8K0SGXQp-2Qs77JIn0WkS8","intent":"clear","at":"2026-11-28T08:13:02.263990Z","roads":["Enakievo-Shahtersk"]}
 ],"changes":[
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
@@ -1437,5 +1440,8 @@
 {"road":"Gorlovka-Debalcevo","status":"busy","from":"neutral","at":"2026-11-28T05:54:32.292Z"},
 {"road":"Harcisk-Shahtersk","status":"busy","from":"neutral","at":"2026-11-28T07:03:08.255Z"},
 {"road":"Enakievo-Shahtersk","status":"busy","from":"neutral","at":"2026-11-28T07:05:29.255Z"},
-{"road":"Doneck-Harcisk","status":"busy","from":"neutral","at":"2026-11-28T07:09:10.249Z"}
+{"road":"Doneck-Harcisk","status":"busy","from":"neutral","at":"2026-11-28T07:09:10.249Z"},
+{"road":"Doneck-Harcisk","status":"clear","from":"busy","at":"2026-11-28T08:11:44.051Z"},
+{"road":"Harcisk-Shahtersk","status":"clear","from":"busy","at":"2026-11-28T08:12:12.069Z"},
+{"road":"Enakievo-Shahtersk","status":"clear","from":"busy","at":"2026-11-28T08:13:03.127Z"}
 ]}

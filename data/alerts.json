@@ -589,7 +589,9 @@
 {"id":"t6QhLRW6RFxTrQF6AZbEZXwE_V38Nz-4","intent":"clear","at":"2026-11-28T02:27:17.750004Z","roads":["Gorlovka-Debalcevo"]},
 {"id":"0PBo0jb5eIGwGAy7d-ua36JQMpKNhtwY","intent":"clear","at":"2026-11-28T02:27:28.482591Z","roads":["Artemovsk-Debalcevo"]},
 {"id":"RmCMCm5NQlsJotEEjmiBfqLjouYnDGSX","intent":"threat","at":"2026-11-28T04:24:29.188110Z","roads":["Artemovsk-Debalcevo"]},
-{"id":"UCJ4utk3_yp47upUhYJfhgnZ56U4Ewjz","intent":"clear","at":"2026-11-28T05:24:47.474535Z","roads":["Artemovsk-Debalcevo"]}
+{"id":"UCJ4utk3_yp47upUhYJfhgnZ56U4Ewjz","intent":"clear","at":"2026-11-28T05:24:47.474535Z","roads":["Artemovsk-Debalcevo"]},
+{"id":"baaxRIjYOT3rE02NcQpl3hk9n_ioeH5w","intent":"threat","at":"2026-11-28T05:54:24.076534Z","roads":["Doneck-Panteleimonovka","Panteleimonovka-Gorlovka"]},
+{"id":"loM9w6-1IupZzVRJxKn-s_4j2BgsvOR3","intent":"threat","at":"2026-11-28T05:54:31.005460Z","roads":["Gorlovka-Debalcevo"]}
 ],"changes":[
 {"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-18T16:01:39.949Z"},
@@ -1426,5 +1428,8 @@
 {"road":"Artemovsk-Debalcevo","status":"busy","from":"neutral","at":"2026-11-28T04:24:29.779Z"},
 {"road":"Artemovsk-Debalcevo","status":"neutral","from":"busy","at":"2026-11-28T04:39:30.158Z"},
 {"road":"Artemovsk-Debalcevo","status":"clear","from":"neutral","at":"2026-11-28T05:24:48.389Z"},
-{"road":"Artemovsk-Debalcevo","status":"neutral","from":"clear","at":"2026-11-28T05:25:19.348Z"}
+{"road":"Artemovsk-Debalcevo","status":"neutral","from":"clear","at":"2026-11-28T05:25:19.348Z"},
+{"road":"Doneck-Panteleimonovka","status":"busy","from":"neutral","at":"2026-11-28T05:54:24.110Z"},
+{"road":"Panteleimonovka-Gorlovka","status":"busy","from":"neutral","at":"2026-11-28T05:54:24.110Z"},
+{"road":"Gorlovka-Debalcevo","status":"busy","from":"neutral","at":"2026-11-28T05:54:32.292Z"}
 ]}

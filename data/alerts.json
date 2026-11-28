@@ -1453,5 +1453,8 @@
 {"road":"Berdyansk-Mariupl","status":"busy","from":"neutral","at":"2026-11-28T08:55:48.244Z"},
 {"road":"Doneck-Panteleimonovka","status":"clear","from":"busy","at":"2026-11-28T09:01:27.500Z"},
 {"road":"Panteleimonovka-Gorlovka","status":"clear","from":"busy","at":"2026-11-28T09:01:27.500Z"},
-{"road":"Gorlovka-Debalcevo","status":"clear","from":"busy","at":"2026-11-28T09:01:30.557Z"}
+{"road":"Gorlovka-Debalcevo","status":"clear","from":"busy","at":"2026-11-28T09:01:30.557Z"},
+{"road":"Doneck-Panteleimonovka","status":"neutral","from":"clear","at":"2026-11-28T09:26:00.138Z"},
+{"road":"Gorlovka-Debalcevo","status":"neutral","from":"clear","at":"2026-11-28T09:26:00.138Z"},
+{"road":"Panteleimonovka-Gorlovka","status":"neutral","from":"clear","at":"2026-11-28T09:26:00.138Z"}
 ]}

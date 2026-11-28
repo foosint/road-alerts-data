@@ -1475,5 +1475,7 @@
 {"road":"Shahtersk-Torez","status":"busy","from":"neutral","at":"2026-11-28T10:49:38.389Z"},
 {"road":"Doneck-Harcisk","status":"neutral","from":"clear","at":"2026-11-28T10:51:15.493Z"},
 {"road":"Doneck-Panteleimonovka","status":"clear","from":"busy","at":"2026-11-28T11:17:07.162Z"},
-{"road":"Panteleimonovka-Gorlovka","status":"clear","from":"busy","at":"2026-11-28T11:17:07.162Z"}
+{"road":"Panteleimonovka-Gorlovka","status":"clear","from":"busy","at":"2026-11-28T11:17:07.162Z"},
+{"road":"Doneck-Panteleimonovka","status":"neutral","from":"clear","at":"2026-11-28T11:46:00.982Z"},
+{"road":"Panteleimonovka-Gorlovka","status":"neutral","from":"clear","at":"2026-11-28T11:46:00.982Z"}
 ]}
